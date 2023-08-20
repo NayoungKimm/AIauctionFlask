@@ -116,17 +116,11 @@
                 </div>
             </div>
             <div class="sec11">
-                <img src="img/11.png" class="sec12" alt=""><br>
-                <h3><div id="outputDiv"></div></h3>
-    
-                <script>         
-                    var inputInfo = document.getElementById("inputInfo");
-                    inputInfo.innerHTML = "<strong>Input Year:</strong> {{ user.input_year }} - <strong>Keyword:</strong> {{ user.keyword }}";
-                </script>
-
-                <p><strong>Input Year:</strong> {{ user.input_year }} - {{ user.keyword }}</p>
-                <p style="font-size: larger; font-weight: bold; color: gray; text-align: center;"><strong>Weighted Final Price:</strong> {{ user.weighted_final_price }}</p>
-
+                <div style="text-align: center;">
+                    <p style="font-size: 25px; font-weight: bold; color: rgb(168, 166, 166); text-align: center; padding-bottom: 10px;"><strong>타경 번호:</strong> {{ user.input_year }} - {{ user.keyword }}</p>
+                    <p style="font-size: 35px; font-weight: bold; color: rgb(0, 0, 0); text-align: center; padding: 10px; background-color: #a1c99f; display: inline-block; box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);"><strong>예상 낙찰가:</strong> {{ user.weighted_final_price }}</p>
+                </div>
+                
                 <button class="btn_1 bg-body rounded border border-light btn float-right" onclick="goToResult()">다시 검색하기</button>
                 <script>
                     function goToResult() {
