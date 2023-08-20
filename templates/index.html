@@ -170,9 +170,11 @@
                 </div>
 
                 <!-- 기다리는 중 메시지 -->
-                <div id="waiting-message" style="display: none;">
-                    데이터 처리 중입니다. 잠시만 기다려주세요...
-                </div>
+                <div id="waiting-message" class="waiting-container" style="display: none;">
+                    <div class="waiting-content">
+                        낙찰가 예상 중입니다<span class="dots-animation">   .   </span><span class="dots-animation">   .   </span><span class="dots-animation">   .   </span>
+                    </div>
+                </div>                
                 <!-- 결과 보기 버튼 (초기에는 숨김) -->
                 <script>
                     function showWaitingMessage() {
