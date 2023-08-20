@@ -1,0 +1,270 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Home</title>
+    <link rel="icon" href="{{ url_for('static', filename='img/icon_name.png') }}"> <!-- icon_name.png를 적절한 파일명으로 바꾸세요 -->
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/animate.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/owl.carousel.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/themify-icons.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/flaticon.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='fontawesome/css/all.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/magnific-popup.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/gijgo.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/nice-select.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/slick.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='img/파비콘.png') }}" type="image/x-icon"/>
+</head>
+
+<body>
+    <!--::header part start::-->
+    <header class="main_menu">
+        <div class="sub_menu">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6 col-sm-12 col-md-6"> </div>
+                    <div class="col-lg-6 col-sm-12 col-md-6">
+                        <div class="sub_menu_social_icon">
+                            <a href="#"><i class="flaticon-facebook"></i></a>
+                            <a href="#"><i class="flaticon-twitter"></i></a>
+                            <a href="#"><i class="flaticon-skype"></i></a>
+                            <a href="#"><i class="flaticon-instagram"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="main_menu_iner">
+            <div class="container">
+                <div class="row align-items-center ">
+                    <div class="col-lg-12">
+                        <nav class="navbar navbar-expand-lg navbar-light justify-content-between">
+                            <a class="navbar-brand" href="index.html">
+                                <img src="{{ url_for('static', filename='img/villa_space.jpg') }}" alt="logo">
+                            </a>
+                            <button class="navbar-toggler" type="button" data-toggle="collapse"
+                                data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                                aria-expanded="false" aria-label="Toggle navigation">
+                                <span class="navbar-toggler-icon"></span>
+                            </button>
+
+                            <div class="collapse navbar-collapse main-menu-item justify-content-center"
+                                id="navbarSupportedContent">
+                                <ul class="navbar-nav">
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="{{ url_for('index') }}">Home</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="{{ url_for('about') }}">About Us</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="{{ url_for('details') }}">Predict Price Villa</a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <a href="#" class="btn_1 d-none d-lg-block rounded-pill">로그인/회원가입</a>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+        <!-- Header part end-->
+
+    <!-- breadcrumb start-->
+    <section class="breadcrumb breadcrumb_bg">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="breadcrumb_iner">
+                        <div class="breadcrumb_iner_item text-center">
+                            <h2>About Villa Space</h2>
+                            <p>Introduce our service</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- breadcrumb start-->
+
+    <!-- about us css start-->
+    <section class="about_us section_padding">
+        <div class="container">
+                <div class="row justify-content-center">
+                    <div class="text-center">
+                        <h5 class="text-danger">이 웹은 성신여자 대학교의 교내 대회에서 진행한 프로젝트입니다.</h5>
+                        <h2>저희를 소개할게요.</h2>
+                        <p>저희는 성신여자 대학교 AI학과 21학번 친구들 4명이 모여 이 프로젝트를 진행하였습니다.</p>
+                        <p>빌라 관련 데이터를 모으고, 데이터를 분석하여 알고리즘을 만든 후 그에 맞는 분류 모델을 적용시겨 부동산의 가격을 예측해주는 서비스를 만들었습니다.</p>
+                        <p>위 서비스는 빅데이터를 바탕으로 분석 후 , 다양한 변수를 고려하며 예측 가격을 제공해 줌으로써 높은 정확도를 기대해 볼 수 있으며,</p>
+                        <p>간단하고 편리한 UI로 사용자에게 쉬운 접근성을 제공해 줍니다.</p>
+                    </div>
+                </div>
+        </div>
+    </section>
+    <!-- about us css end-->
+
+
+    <!--::industries start::-->
+    <section class="best_services section_padding">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-xl-6">
+                    <div class="section_tittle text-center">
+                        <h2>적용 기술</h2>
+                        <p>Villa Space를 만들기 위해 적용한 기술을 소개합니다.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-3 col-sm-6">
+                    <div class="single_ihotel_list">
+                        <img src="{{ url_for('static', filename='img/visual.jpg') }}" alt="">
+                        <h3> <a href="#"> visual studio code</a></h3>
+                        <p>visual studio code를 이용해 프론트 작업을 하였습니다.</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-sm-6">
+                    <div class="single_ihotel_list">
+                        <img src="{{ url_for('static', filename='img/Pycharm.jpg') }}" alt="">
+                        <h3> <a href="#">Pycharm</a></h3>
+                        <p>Pycharm을 활용해 데이터를 분석하고 알고리즘을 개발하였습니다.</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-sm-6">
+                    <div class="single_ihotel_list">
+                        <img src="{{ url_for('static', filename='img/mac.jpg') }}" alt="">
+                        <h3> <a href="#"> 머신러닝</a></h3>
+                        <p>시계열 데이터를 이용하여 반복 기계학습을 통한 결과 추론을 한다.</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-sm-6">
+                    <div class="single_ihotel_list">
+                        <img src="{{ url_for('static', filename='img/git.jpg') }}" alt="">
+                        <h3> <a href="#">GitHyb Desktop</a></h3>
+                        <p>깃허브 데스크탑을 통해 협업 프로젝트를 진행하였다.
+                            작업한 코드를 올리고 받아오며 팀원들과 상호 작용하며 프로젝트를 진행하였다.
+                           </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--::industries end::-->
+
+    <!--top place start-->
+    <section class="client_review section_padding">
+        <div class="container">
+            <div class="row ">
+                <div class="col-xl-6">
+                    <div class="section_tittle">
+                        <h2>개발자</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="client_review_slider owl-carousel">
+                        <div class="single_review_slider">
+                            <img src="{{ url_for('static', filename='img/daeun2.jpg') }}" alt="">
+                            <p>성신여자 대학교 3학년 </p>
+                            <h5> -이다은</h5>
+                        </div>
+                        <div class="single_review_slider">
+                            <img src="{{ url_for('static', filename='img/si.png') }}" alt="">
+                            <p>성신여자 대학교 3학년 </p>
+                            <h5> -최시정</h5>
+                        </div>
+                        <div class="single_review_slider">
+                            <img src="{{ url_for('static', filename='img/na.png') }}" alt="">
+                            <p>성신여자 대학교 3학년</p>
+                            <h5> -김나영</h5>
+                        </div>
+                        <div class="single_review_slider">
+                            <img src="{{ url_for('static', filename='img/gyu.png') }}" alt="">
+                            <p>성신여자 대학교 3학년</p>
+                            <h5> -이규민</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--top place end-->
+
+     <!--::gallery part start::-->
+     <section class="our_gallery section_padding">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-xl-6">
+                    <div class="section_tittle text-center">
+                        <h2>Our history</h2>
+                        <p>7개월 간의 개발 기록을 사진으로 공유합니다.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="card-columns">
+                        <div class="card">
+                            <a href="{{ url_for('static', filename='img/gallery/gallery_1.png') }}" class="gallery_img">
+                                <img src="{{ url_for('static', filename='img/pic1.jpg') }}" class="card-img-top" alt="">
+                            </a>
+                        </div>
+                        <div class="card">
+                            <a href="{{ url_for('static', filename='img/gallery/gallery_3.png') }}" class="gallery_img">
+                                <img src="{{ url_for('static', filename='img/pic4.jpg') }}" class="card-img-top" alt="">
+                            </a>
+                        </div>
+                        <div class="card">
+                            <a href="{{ url_for('static', filename='img/gallery/gallery_2.png') }}" class="gallery_img">
+                                <img src="{{ url_for('static', filename='img/pic5.jpg') }}" class="card-img-top" alt="">
+                            </a>
+                        </div>
+                      </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--::gallery part end::-->
+
+    <!-- footer part start-->
+    <footer class="footer-area">
+        <div class="container-fluid">
+            <div class="row justify-content-center">
+                <div class="col-lg-12">
+                        <p class="footer-text m-0"><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+<!-- Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="ti-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a> -->
+<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- footer part end-->
+
+    <!-- Scripts -->
+    <script src="{{ url_for('static', filename='js/jquery-1.12.1.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/popper.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/jquery.magnific-popup.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/owl.carousel.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/masonry.pkgd.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/jquery.nice-select.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/gijgo.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/jquery.ajaxchimp.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/jquery.form.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/jquery.validate.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/mail-script.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/contact.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/custom.js') }}"></script>
+</body>
+
+</html>

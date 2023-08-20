@@ -1,0 +1,82 @@
+<!--
+function goPage(page){
+	document.bbsForm.mode.value = 'list';
+	document.bbsForm.page.value = page;
+	document.bbsForm.submit();
+}
+function viewPage(uid,page){
+	document.bbsForm.uid.value = uid;
+	document.bbsForm.mode.value = 'view';
+	document.bbsForm.page.value = page;
+	document.bbsForm.submit();
+}
+function writeForm(){
+	document.bbsForm.uid.value = '';
+	document.bbsForm.mode.value = 'write';
+	document.bbsForm.submit();
+}
+function reflyForm(uid){
+	document.bbsForm.uid.value = uid;
+	document.bbsForm.mode.value = 'reply';
+	document.bbsForm.submit();
+}
+function modifyForm(uid){
+	document.bbsForm.uid.value = uid;
+	document.bbsForm.mode.value = 'modify';
+	document.bbsForm.submit();
+}
+
+function deleteForm(){
+	if( re = confirm('삭제하시겠습니까') ) {
+		document.viewForm.mode.value = 'delete';
+		document.viewForm.submit();
+	}
+}
+
+function commentcheck(fom)
+{
+	clearbox();
+	if(fom.name.value == "")	{  alert("이름을 입력해주세요"); fom.name.focus(); return false; }
+	if(fom.pw.value == "")		{  alert("비밀번호를 입력해주세요"); fom.pw.focus(); return false; }
+	if(fom.subject.value == ""){  alert("제목을 입력해주세요"); fom.subject.focus(); return false; }
+	if(fom.memo.value == "")	{  alert("내용을 입력해주세요"); fom.memo.focus(); return false; }
+	return true;
+}
+
+
+function delComment(comment_id)
+{
+	if( re = confirm('삭제하시겠습니까') ) {
+		document.commentForm.action = '/cyosBoard/bbs2/delete_comment_proc.php';
+		document.commentForm.comment_id.value = comment_id;
+		document.commentForm.mode.value = 'view';
+		document.commentForm.submit();
+	}
+}
+
+function clearbox(){
+	if(document.commentForm.subject.value == '제목을 입력하세요.')
+	{
+		document.commentForm.subject.value='';
+	}
+}
+
+function resizeMaxwidth(img,maxWidth){
+
+	 var width = img.width;
+	 var height = img.height;
+
+
+	 if(width > maxWidth){
+		 resizeWidth = maxWidth;
+	 }else{
+		resizeWidth = width;
+	 }
+
+	 if(width < 100 ) resizeWidth = 730;
+	 img.width = resizeWidth;
+
+}
+
+
+//-->

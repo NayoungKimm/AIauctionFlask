@@ -1,0 +1,252 @@
+function MM_swapImgRestore() { //v3.0
+  var i,x,a=document.MM_sr; for(i=0;a&&i<a.length&&(x=a[i])&&x.oSrc;i++) x.src=x.oSrc;
+}
+
+function MM_preloadImages() { //v3.0
+  var d=document; if(d.images){ if(!d.MM_p) d.MM_p=new Array();
+    var i,j=d.MM_p.length,a=MM_preloadImages.arguments; for(i=0; i<a.length; i++)
+    if (a[i].indexOf("#")!=0){ d.MM_p[j]=new Image; d.MM_p[j++].src=a[i];}}
+}
+
+function MM_findObj(n, d) { //v4.01
+  var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+    d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+  if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+  for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document);
+  if(!x && d.getElementById) x=d.getElementById(n); return x;
+}
+
+function MM_swapImage() { //v3.0
+  var i,j=0,x,a=MM_swapImage.arguments; document.MM_sr=new Array; for(i=0;i<(a.length-2);i+=3)
+   if ((x=MM_findObj(a[i]))!=null){document.MM_sr[j++]=x; if(!x.oSrc) x.oSrc=x.src; x.src=a[i+2];}
+}
+
+/*************************************************************
+# 셀렉트박스 선택
+**************************************************************/
+function setSelectedValue(listBox,itemValue){
+	//console.log(listBox);
+	var idx = 0;
+	for( var i=0; i < listBox.options.length; i++){
+		if( listBox.options[i].value == itemValue ){
+			idx = i;
+			//alert( itemValue + "::" + i);
+		}
+	}
+
+	//alert(idx);
+	listBox.selectedIndex = idx;
+
+}
+
+/************************************************************* 
+		function input_num_only();
+		용도 : 숫자를 입력했는지 확인;
+		function input_cri_no();
+		용도 : 숫자 영문소문자만 입력가능;
+**************************************************************/
+function input_num_only()
+{
+	if(event.keyCode <48 || event.keyCode >57)
+	{
+		alert('숫자만 입력하세요.');
+		this.focus();
+		event.returnValue=false; 
+	} 
+}
+
+function input_cri_no()
+{  
+   var objEv = event.srcElement;  
+   var numPattern = /([^a-z,0-9])/;  
+   numPattern = objEv.value.match(numPattern);  
+ 
+   if(numPattern != null){   
+        alert("특문이나 대문자 입력불가!");   
+        objEv.value="";   
+        objEv.focus();  
+        return false;  
+   } 
+}
+
+/*************************************************************
+# 상세보기 등기원인 및 목적 미리보기
+**************************************************************/
+function denggiList(){
+	this.add = DenggiAdd
+	this.Denggi = Array();
+	this.size = 0;
+}
+
+function DenggiAdd(){
+	var args = DenggiAdd.arguments;
+	if(args.length < 2) return;
+	this.Denggi[this.size] = new denggiField(args[0], args[1]);
+	this.size++;
+}
+
+function showdenggi(i){
+	Showdenggi_Layer.style.top = ml_trackYPos()+0;
+	Showdenggi_Layer.style.left = ml_trackXPos();
+	window.denggi_con.innerHTML = ConByI(i);
+	Showdenggi_Layer.style.visibility = "visible";
+}
+
+function showdenggi_H(i){
+	Showdenggi_Layer.style.top = ml_trackYPos()+0;
+	Showdenggi_Layer.style.left = ml_trackXPos();
+	window.denggi_con.innerHTML = ConByI(i);
+	Showdenggi_Layer.style.visibility = "visible";
+}
+
+
+function denggiField() {
+	var args = denggiField.arguments;
+	this.speedcode = args[0];
+	this.cont = args[1];
+}
+
+function ml_writeLayer_denggi(contents) {
+	document.write("\
+		<div id='Showdenggi_Layer' style='visibility:hidden ; left: 0px; position: absolute; top: 0px; z-index:13'>\
+		<table id='denggiT01' width=500 border='0' cellpadding='0' cellspacing='0'>\
+			<tr>\
+				<td width='10' height='8'><img src='/v3/images/v2_move/contents/img/tc_01.gif' border=0></td>\
+				<td background='/v3/images/v2_move/contents/img/tc_02.gif'></td>\
+				<td width='14' height='8'><img src='/v3/images/v2_move/contents/img/tc_03.gif' border=0></td>\
+			</tr>\
+			<tr>\
+				<td width='10' background='/v3/images/v2_move/contents/img/tc_04.gif'></td>\
+				<td valign=top bgcolor=FFFFFF style='padding:10 10 10 10'>\
+					<span background='/easy/img/blank.gif' id='denggi_con'></span>\
+				</td>\
+				<td width='14' background='/v3/images/v2_move/contents/img/tc_06.gif'></td>\
+			</tr>\
+			<tr>\
+				<td width='10' height='12'><img src='/v3/images/v2_move/contents/img/tc_07.gif' border=0></td>\
+				<td background='/v3/images/v2_move/contents/img/tc_08.gif'></td>\
+				<td width='14' height='12'><img src='/v3/images/v2_move/contents/img/tc_09.gif' border=0></td>\
+			</tr>\
+		</table>\
+		</div>\
+		");
+}
+
+
+function ConByI(i) {
+	var n = 0;
+	for(;n < lsList.size; n++){
+		if(lsList.Denggi[n].speedcode == i) return lsList.Denggi[n].cont;
+	}
+	return "";
+}
+function hiddenDenggi(){
+	Showdenggi_Layer.style.visibility = "hidden";
+}
+
+function ml_trackXPos() {
+	var xPos = window.document.body.scrollLeft + event.clientX;
+	return xPos;
+}
+
+function ml_trackYPos() {
+	var MainBody = window.document.body;
+	var yPos = event.clientY + MainBody.scrollTop;
+
+	var screen_height = window.document.body.offsetHeight;
+	var screen_width = window.document.body.offsetWidth;
+
+	if (screen_height > event.y) yPos = event.clientY + MainBody.scrollTop;
+	else yPos = event.clientY + MainBody.scrollTop;
+	if (event.y < 0) yPos = event.clientY + MainBody.scrollTop;
+	return yPos;
+}
+
+var lsList = new denggiList();
+
+
+function mf(s,d,w,h,t){
+        return "<object classid=\"clsid:d27cdb6e-ae6d-11cf-96b8-444553540000\" codebase=\"http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,0,0\" width="+w+" height="+h+" id="+d+"><param name=wmode value="+t+" /><param name=movie value="+s+" /><param name=quality value=high /><embed src="+s+" quality=high wmode="+t+" type=\"application/x-shockwave-flash\" pluginspage=\"http://www.macromedia.com/shockwave/download/index.cgi?p1_prod_version=shockwaveflash\" width="+w+" height="+h+"></embed></object>";
+}
+
+
+function checkBytes(obj, count_obj)
+{
+	var bytes = StrByteLengthEx(obj.value);
+
+	if (bytes > MAX_TEXT_BYTE)
+	{
+		alert(MAX_TEXT_BYTE+"byte까지만 전송하실 수 있습니다.");
+		obj.value = GetTextByteEx(obj.value, MAX_TEXT_BYTE);
+		bytes = MAX_TEXT_BYTE;
+	}
+
+	eval("document.all." + count_obj).innerHTML = bytes;
+}
+
+function GetTextByteEx(strVal, limitByte)
+{// 해당 바이트 만큼만 가져오기
+	var strLen = 0;
+
+	var retVal = "";
+
+	for(var i=0; i<strVal.length; i++)
+	{
+		var chrCode = strVal.charCodeAt(i);
+
+		if(chrCode == 10) // 무시하기 위한 바이트값
+			continue;
+
+		strLen++;
+
+		if(chrCode > 255)
+			strLen++;
+
+		if(strLen > limitByte)
+			break;
+
+		retVal += strVal.charAt(i);
+	}
+
+	return retVal;
+}
+
+function StrByteLengthEx(strVal)
+{// 2Byte(13+10)의 리턴 문자에서 1바이트(10)는 계산에서 제외...
+	var strLen = 0;
+
+	for(var i=0; i<strVal.length; i++)
+	{
+		var chrCode = strVal.charCodeAt(i);
+
+		if(chrCode == 10) // 무시하기 위한 바이트값
+			continue;
+
+		strLen++;
+
+		if(chrCode > 255)
+			strLen++;
+	}
+
+	return strLen;
+}
+
+
+function goMovieViewCode(code){
+	window.open('/v2/player/player.php?playcode='+code,'movie','width=750,height=750,top=0,left=0');
+}
+
+//체크박스 체크 YYK
+function fn_allchk(flag){
+	$(".list_chk_box").attr("checked", flag);
+}
+
+// 뒤로가기 이벤트 막기
+// 크롬 > 양식 다시 제출
+history.pushState(null, null, location.href);
+window.onpageshow = function(event) {
+    if ( event.persisted || (window.performance && window.performance.navigation.type == 2)) {
+        // Back Forward Cache로 브라우저가 로딩될 경우 혹은 브라우저 뒤로가기 했을 경우
+		return false;
+    }
+}

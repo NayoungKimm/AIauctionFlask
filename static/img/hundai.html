@@ -1,0 +1,1077 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<!-- saved from url=(0192)https://www.speedauction.co.kr/v3/M_view/zoom/info-result-zoom.htm?partner=&courtNo=A05&courtNo2=&eventNo1=2022&eventNo2=108633&objNo=1&bamdcode=1129013300&amdcode=1129063000&objuse_pagetype=B -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
+<title></title>
+
+
+<link rel="StyleSheet" href="./hundai_files/2009css.css" type="text/css">
+<link rel="StyleSheet" href="./hundai_files/cyos.css" type="text/css">
+<script language="javascript" src="./hundai_files/jquery-1.5.1.min.js.다운로드"></script>
+<script language="javascript" src="./hundai_files/cyos.js.다운로드"></script>
+<script language="javascript" src="./hundai_files/default.js.다운로드"></script>
+<script language="javascript" src="./hundai_files/bbs.js.다운로드"></script>
+<script language="javascript" src="./hundai_files/new_win.js.다운로드"></script>
+
+<script language="JavaScript" type="text/JavaScript">
+<!--
+
+function fn_view_img(c_src,imgW,imgH) //오른쪽이미지클릭시
+{
+	photo01.style.display = "block";
+//	var imginfoex = document.getElementById('imginfotxt');
+//	imginfoex.innerHTML = " ※ 이미지를 클릭하시면 원본사이즈로 보실 수 있습니다.";
+	try{	dawul.style.display = "none"; } catch(e){}
+	photo01.src=c_src;
+	document.zoom_print.filename.value=c_src;
+	fitImgeSize(imgW, imgH);
+}
+function img_onclick(filen) //원본이미지보기
+{
+	imgfrm = window.open('','img_onclick_pop',style);
+	imgfrm.close();
+	var style="top=0,left=0,scrollbars=yes,resizable=yes,border=0";
+	filen = filen.replace(/&/g,'^');
+	var filename = "info-result-zoom_onclick.htm?filename="+filen;
+	imgfrm = window.open(filename,'img_onclick_pop',style);
+	imgfrm.focus();
+}
+function zoom_open(send_file,courtNo,eventNo1,eventNo2,objNo,obj_list)
+{
+	var form = document.resultfrm;
+	form.courtNo.value = courtNo;
+	form.eventNo1.value = eventNo1;
+	form.eventNo2.value = eventNo2;
+	form.objNo.value = objNo;
+	form.obj_list.value = obj_list;
+
+	var style="top=0,left=0,width=850,height=680,scrollbars=yes,resizable=yes,border=0";
+	window.open("about:blank",'zoomopen',style);
+	form.action=send_file;
+	form.target="zoomopen";
+
+	form.submit();
+}
+
+var isNav4, isIE4;
+var windowX, windowY;
+var bLargeImage = 0;
+var x,y;
+if (parseInt(navigator.appVersion.charAt(0)) >= 4)
+{
+	isNav4 = (navigator.appName == "Netscape") ? 1 : 0;
+	isIE4 = (navigator.appName.indexOf("Microsoft") != -1) ? 1 : 0;
+}
+function fitImgeSize(imgW, imgH)
+{
+	var maxwidth = 688;
+	var maxheight = 510;
+	if(imgW==null) imgW=maxwidth;
+	if(imgH==null) imgH=maxheight;
+//	alert(imgW+'/'+imgH);
+	if(imgH > maxheight){
+		document.images['photo01'].height = maxheight;
+	}else{
+		if( imgH > 0 ) document.images['photo01'].height = imgH;
+	}
+	if(imgW > maxwidth) document.images['photo01'].width = maxwidth;
+	else document.images['photo01'].width = imgW;
+}
+//-->
+</script>
+</head>
+<body leftmargin="10" topmargin="10" onload="resizeDiv();">
+<!-- new popup start -->
+<div id="dialogbackgroundlayer" style="display: none; position: absolute; z-index: 11; left: 0px; top: 0px; width: 100%; background: rgb(0, 0, 0); opacity: 0.5;" onclick="win.dialog_close()">
+</div>
+<div id="dialoglayer" style="display:none;position:absolute;z-index:12;">
+</div>
+<div id="message" style="display:none;position:absolute;left:0px;top:0px;padding:3px;background:#cc0000;color:#ffffff;font-size:13px;font-weight:bold;z-index:100;"></div>
+<script>
+var win = new new_popup();
+</script>
+<!-- new popup end -->
+<form name="resultfrm" method="post" action="https://www.speedauction.co.kr/v3/M_view/zoom/info-result-zoom.htm?partner=&amp;courtNo=A05&amp;courtNo2=&amp;eventNo1=2022&amp;eventNo2=108633&amp;objNo=1&amp;bamdcode=1129013300&amp;amdcode=1129063000&amp;objuse_pagetype=B">
+<input type="hidden" name="courtNo" value="">
+<input type="hidden" name="eventNo1" value="">
+<input type="hidden" name="eventNo2" value="">
+<input type="hidden" name="objNo" value="">
+<input type="hidden" name="obj_list" value="">
+</form>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+
+  <tbody><tr>
+    <td align="center" valign="top">
+    	<script>
+function fn_zoom_print(send_file)
+{
+	var style="top=0,left=0,width=670,height=610,scrollbars=yes,resizable=yes,border=0";
+	window.open(send_file,'zoomprint',style);
+	document.zoom_print.mode.value = 'alone';
+	document.zoom_print.target="zoomprint";
+	document.zoom_print.action=send_file;
+	document.zoom_print.submit();
+}
+function fn_zoom_print_together(send_file)
+{
+	var flag = 0;
+	for( var i=0; i<document.frm_zoom.elements.length; i++) {
+		var ele = document.frm_zoom.elements[i];
+		if(ele.name.substring(0,11) == 'imgfilename')
+		if(ele.checked) {
+			flag = 1;
+		}
+	}
+
+	if(flag < 1) {
+		alert("인쇄할 이미지를 선택하세요"); return;
+	}
+
+	var style="top=0,left=0,width=670,height=610,scrollbars=yes,resizable=yes,border=0";
+
+	window.open(send_file,'zoomprint',style);
+	document.frm_zoom.target="zoomprint";
+	document.frm_zoom.action=send_file;
+	document.frm_zoom.submit();
+}
+function zoom_view(send_file)
+{
+	var form = document.zoom_view_form;
+	form.action=send_file;
+	form.target="_self";
+	form.submit();
+}
+function beforePrint(){ 
+	initBody = document.body.innerHTML; 
+	document.body.innerHTML = mapContainer.innerHTML; 
+} 
+function afterPrint(){ 
+	document.body.innerHTML = initBody; 
+} 
+function printDiv () {
+	alert('용지를 가로방향으로 설정하시면 보다 좋은 인쇄를 얻으실 수 있습니다.');
+	var initBody; 
+	var tab = 1;
+	if(tab == "6"){
+		if (document.queryCommandSupported('print')){
+			iSagun.document.execCommand('print', false, null);
+		}
+		else {
+		 window.parent.iSagun.focus();
+		 window.print();
+		}
+	}else if (tab == "5"){
+		if (document.queryCommandSupported('print')){
+			ifrm.document.execCommand('print', false, null);
+		}
+		else {
+		 window.parent.ifrm.focus();
+		 window.print();
+		}
+	}else if (tab == "13"){
+		//
+	}else if (tab == "12"){
+		//
+	}else if (tab == "11"){
+		//
+	}else if (tab == "8"){
+		//
+	}else if (tab == "14"){
+		if (document.queryCommandSupported('print')){
+			ifrmDajiDoc.document.execCommand('print', false, null);
+		}
+		else {
+		 window.parent.ifrmDajiDoc.focus();
+		 window.print();
+		}
+	}else{
+		var initBody = document.body.innerHTML;
+		window.onbeforeprint = function () {
+			document.body.innerHTML = document.getElementById("mapContainer").innerHTML;
+		}
+		window.onafterprint = function () {
+		document.body.innerHTML = initBody;
+		}
+		window.print();
+	}
+}
+function ifrm_print(tab){
+	if (document.queryCommandSupported('print')) {
+	 document.execCommand('print', false, null);
+	}
+ }
+function printRoadViewDiv () {
+	alert('용지를 가로방향으로 설정하시면 보다 좋은 인쇄를 얻으실 수 있습니다');
+	window.print();
+}
+</script>
+<script language="JavaScript" type="text/JavaScript">
+<!--
+function MM_swapImgRestore() { //v3.0
+  var i,x,a=document.MM_sr; for(i=0;a&&i<a.length&&(x=a[i])&&x.oSrc;i++) x.src=x.oSrc;
+}
+
+function MM_preloadImages() { //v3.0
+  var d=document; if(d.images){ if(!d.MM_p) d.MM_p=new Array();
+    var i,j=d.MM_p.length,a=MM_preloadImages.arguments; for(i=0; i<a.length; i++)
+    if (a[i].indexOf("#")!=0){ d.MM_p[j]=new Image; d.MM_p[j++].src=a[i];}}
+}
+
+function MM_findObj(n, d) { //v4.01
+  var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+    d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+  if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+  for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document);
+  if(!x && d.getElementById) x=d.getElementById(n); return x;
+}
+
+function MM_swapImage() { //v3.0
+  var i,j=0,x,a=MM_swapImage.arguments; document.MM_sr=new Array; for(i=0;i<(a.length-2);i+=3)
+   if ((x=MM_findObj(a[i]))!=null){document.MM_sr[j++]=x; if(!x.oSrc) x.oSrc=x.src; x.src=a[i+2];}
+}
+//-->
+</script>
+<style>
+	* { margin:0; padding:0; }
+</style>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tbody><tr>
+    <td>
+			<table width="100%" border="0" cellspacing="0" cellpadding="0">
+        <tbody><tr>
+          <td><table width="100%" border="0" cellspacing="0" cellpadding="0">
+              <tbody><tr>
+                <td>
+									<table width="100%" border="0" cellpadding="0" cellspacing="1" bgcolor="E6E6E6">
+                    <tbody><tr>
+                      <td height="39" align="center" background="./hundai_files/201201infosub00-bg01.gif">
+
+												<table width="100%" border="0" cellspacing="0" cellpadding="0">
+                          <tbody><tr>
+														<td width="10"></td>
+                            <td width="150" style="padding-top:2px">
+															서울북부지방법원 															<br>
+															<strong>2022 타경 108633 (1)</strong>
+														</td>
+														<td width="1" bgcolor="#E6E6E6"></td>
+														<td width="10"></td>
+                            <td align="left" style="padding-top:2px;font-size:14px;font-weight:bold">
+														서울특별시 성북구 정릉동 508-165 현대하이츠빌라 제3층 제302호																												</td>
+														<td width="6"></td>
+
+														<!-- PDF 내용이 보이지 않을때 -->
+																												<!-- //내용이 보이지 않을때 -->
+
+														<!-- 지도 내용이 보이지 않을때 -->
+																												<!-- //내용이 보이지 않을때 -->
+
+														<!-- 선택사진인쇄 & 휴대폰에 담기 -->
+																												<td width="78"><a href="javascript:fn_zoom_print_together(&#39;info-result-zoom_print.php&#39;);"><img src="./hundai_files/201201infosub00-2.gif" width="74" height="20"></a></td>
+														<!--<td width="96"><a href="#" onclick="NewWindow('/v3/M09/mypage/mms01.php?courtNo=A05&eventNo1=2022&eventNo2=108633&objNo=1','mms',650,750,'yes','')"><img src="/v3/images/M_view/zoom/201201infosub00-4.gif"></a></td>-->
+														<!-- //선택사진인쇄 & 휴대폰에 담기 -->
+														
+														<!-- 인쇄하기 -->
+																												<td width="57"><a href="javascript:printDiv();"><img src="./hundai_files/201201infosub00-5.gif" border="0"></a></td>
+																																										<!-- //인쇄하기 -->
+
+														<!-- 창닫기 -->
+														<td width="44"><a href="javascript:self.close();"><img src="./hundai_files/201201infosub00-3.gif" width="44" height="20" border="0"></a></td>
+														<!-- //창닫기 -->
+
+														<td width="10"></td>
+                          </tr>
+                        </tbody></table>
+
+											</td>
+                    </tr>
+                  </tbody></table></td>
+              </tr>
+            </tbody></table></td>
+        </tr>
+        <tr>
+          <td height="15"></td>
+        </tr>
+        <tr>
+          <td>
+			<table width="100%" border="0" cellspacing="0" cellpadding="0">
+              <tbody><tr>
+                <!-- 왼쪽영역이 존재해야하는 위치 -->
+				<style>
+					.top_inc_leftm { clear:both;}
+					.top_inc_leftm > ul { list-style:none;}
+					.top_inc_leftm > ul > a > li { float:left; list-style:none; padding:0px 5px; background:#efefef; margin:1px; background-color:#f4f4f4; background-image: linear-gradient(#fff, #f4f4f4); border:1px #e6e6e6 solid; text-align:center; height:28px; line-height:28px;}
+					.top_inc_leftm > ul > a > li:hover { color:#1f64c1; background-color:#e2f4ff; background-image: linear-gradient(#fff, #e2f4ff);}
+					.top_inc_leftm > ul > a > li.activeC { float:left; list-style:none; padding:0px 5px; background:#efefef; margin:1px; color:#1f64c1; background-color:#e2f4ff; background-image: linear-gradient(#fff, #e2f4ff); border:1px #e6e6e6 solid; text-align:center; height:28px; line-height:28px; }
+				</style>
+				<td>
+					<div class="top_inc_leftm">
+						<ul>
+							<a href="javascript:zoom_view(&#39;info-result-zoom.htm?tab=1&#39;);"><li class="activeC">사진/지적도</li></a>
+							<!-- 등기부등본 토지 -->
+														<!-- 등기부등본 토지 -->
+
+							<!-- 등기부등본 건물 -->
+														<a href="javascript:zoom_view(&#39;info-result-zoom2.htm?tab=2&#39;);"><li>건물등기</li></a>
+														<!-- 등기부등본 건물 -->
+
+							<!-- 감정평가서 -->
+														<a href="javascript:zoom_view(&#39;info-result-zoom4.htm?tab=4&#39;);"><li>감정평가서</li></a>
+														<!-- 감정평가서 -->
+
+							<!-- 20230321 pjs 자동차원부 신규-->
+														<!-- 자동차원부 -->
+
+							<!--20230321 pjs 이전 자동차원부 -->
+							<!-- 20220725 pjs 사건번호만 조회하여 법원코드, 사건년도 추가-->
+							<!--  -->
+							<!-- 자동차원부 -->
+
+							<!-- 건축물대장 -->
+							
+
+							<!-- 누락 건축물대장 -->
+							
+
+
+							<!-- 토지임야대장 -->
+														<!-- 토지임야대장 -->
+						</ul>
+					</div>
+					<div class="top_inc_leftm">
+						<ul>
+							<!-- 현황조사서 -->
+															<a href="javascript:zoom_view(&#39;info-result-zoom6.htm?tab=6&#39;);"><li>현황조사서</li></a>
+														<!-- 현황조사서 -->
+
+							<!-- 매각물건명세서 -->							
+							
+								
+
+							<!-- 매각물건명세서pdf -->	
+																	<a href="javascript:zoom_view(&#39;info-result-zoom21.htm?tab=21&#39;);"><li>매각물건명세서</li></a>
+									
+												
+								<!--사건내역-->
+								<a href="javascript:zoom_view(&#39;info-result-zoom13.htm?tab=13&#39;);"><li>사건내역</li></a>
+								<!--사건내역-->
+
+								<!--기일내역-->
+								<a href="javascript:zoom_view(&#39;info-result-zoom12.htm?tab=12&#39;);"><li>기일내역</li></a>
+								<!--기일내역-->
+
+								<!--문건접수내역-->
+								<a href="javascript:zoom_view(&#39;info-result-zoom11.htm?tab=11&#39;);"><li>문건접수/송달</li></a>							
+														<!--문건접수내역-->
+
+							<!--부동산표시목록-->
+															<a href="javascript:zoom_view(&#39;info-result-zoom8.htm?tab=8&#39;);"><li>부동산표시목록</li></a>
+														<!--부동산표시목록-->
+
+							
+
+						</ul>
+					</div>
+				</td>
+                <td width="330">
+					<table width="100%" border="0" cellspacing="0" cellpadding="0">
+						<tbody><tr>
+															<script type="text/javascript">
+								function windowOpenFull(url, name, width)
+								{
+									window.open(url, null, 'top=0,left=0,width='+(screen.availWidth)+',height='+(screen.availHeight)+',fullscreen=no,toolbar=0,location=0,directories=0,status=0,menubar=0,resizable=1,scrolling=0');
+								}
+							</script>
+							<td>
+								<div class="top_inc_leftm">
+									<ul>										
+																					<a href="https://www.speedauction.co.kr/v3/M_view/zoom/info-result-zoom.htm?partner=&amp;courtNo=A05&amp;courtNo2=&amp;eventNo1=2022&amp;eventNo2=108633&amp;objNo=1&amp;bamdcode=1129013300&amp;amdcode=1129063000&amp;objuse_pagetype=B#" onclick="windowOpenFull(&#39;https://www.eum.go.kr/web/mp/mpMapDet.jsp?pnu=1129013300105080165&#39;)"><li style="width:96px;">이음편집도</li></a>
+										
+										<a href="https://www.speedauction.co.kr/v3/M_view/zoom/info-result-zoom.htm?partner=&amp;courtNo=A05&amp;courtNo2=&amp;eventNo1=2022&amp;eventNo2=108633&amp;objNo=1&amp;bamdcode=1129013300&amp;amdcode=1129063000&amp;objuse_pagetype=B#" onclick="windowOpenFull(&#39;https://seereal.lh.or.kr/SeerealMAP/seerealCommon/moveMap.do?center=14105646.98122008,4513664.228254158,253.63017958402634&amp;zoom=18&amp;layer=tl_ctnu_lgstr&amp;pnu=1129013300105080165&#39;)"><li style="width:96px;">온나라지도</li></a>
+										<a href="javascript:zoom_view(&#39;info-result-zoom_map_daum_district.htm&#39;);"><li style="width:96px;">지적편집도</li></a>
+										<a href="javascript:zoom_view(&#39;info-result-zoom_map_daum_nomal.htm&#39;);"><li style="width:96px;">전자지도</li></a>
+										<a href="javascript:zoom_view(&#39;info-result-zoom_map_daum_skyview.htm&#39;);"><li style="width:96px;">스카이뷰</li></a>
+										<a href="javascript:zoom_view(&#39;info-result-zoom_map_daum.htm&#39;);"><li style="width:96px;">다음로드뷰</li></a>
+									</ul>
+								</div>
+							</td>
+						</tr>
+					</tbody></table>
+				  </td>
+              </tr>
+            </tbody></table>
+			</td>
+        </tr>
+        <tr>
+          <td width="15"></td>
+        </tr>
+        <tr>
+          <td height="10"></td>
+        </tr>
+      </tbody></table>
+
+
+
+
+
+		</td>
+  </tr>
+</tbody></table>
+
+<form name="zoom_view_form" method="post" action="https://www.speedauction.co.kr/v3/M_view/zoom/info-result-zoom.htm?partner=&amp;courtNo=A05&amp;courtNo2=&amp;eventNo1=2022&amp;eventNo2=108633&amp;objNo=1&amp;bamdcode=1129013300&amp;amdcode=1129063000&amp;objuse_pagetype=B">
+<input type="hidden" name="courtNo" value="A05">
+<input type="hidden" name="courtNo2" value="">
+<input type="hidden" name="eventNo1" value="2022">
+<input type="hidden" name="eventNo2" value="108633">
+<input type="hidden" name="objNo" value="1">
+<input type="hidden" name="obj_list" value="">
+<input type="hidden" name="selldate" value="">
+<input type="hidden" name="map_selldate" value="">
+<input type="hidden" name="addr_text" value="">
+<input type="hidden" name="view_gubun" value="">
+<input type="hidden" name="r_url" value="/v3/M_view/zoom/info-result-zoom.htm">
+<input type="hidden" name="serino" value="">
+<input type="hidden" name="objuse" value="">
+<input type="hidden" name="gamjungprice" value="">
+<input type="hidden" name="lowprice" value="">
+<input type="hidden" name="lowpricerate" value="">
+<input type="hidden" name="partner" value="">
+<input type="hidden" name="dongcode" value="">
+<input type="hidden" name="objuse_pagetype" value="B">
+<input type="hidden" name="IS_VIEW_COURT" value="1">
+<input type="hidden" name="amdcode" value="1129063000">
+<input type="hidden" name="bamdcode" value="1129013300">
+
+</form>
+<form name="zoom_print" method="post" action="https://www.speedauction.co.kr/v3/M_view/zoom/info-result-zoom.htm?partner=&amp;courtNo=A05&amp;courtNo2=&amp;eventNo1=2022&amp;eventNo2=108633&amp;objNo=1&amp;bamdcode=1129013300&amp;amdcode=1129063000&amp;objuse_pagetype=B">
+<input type="hidden" name="mode" value="">
+<input type="hidden" name="courtNo" value="A05">
+<input type="hidden" name="courtNo2" value="">
+<input type="hidden" name="eventNo1" value="2022">
+<input type="hidden" name="eventNo2" value="108633">
+<input type="hidden" name="objNo" value="1">
+<input type="hidden" name="filename" value="http://img1.speedauction.co.kr/new_gamimg/2023/A05/2022/108633/1_1687320147.png">
+</form>    </td>
+  </tr>
+	<tr>
+		<td height="1" bgcolor="#DDDCDC"></td>
+	</tr>
+
+	<tr>
+		<td height="5"></td>
+	</tr>
+	<tr>
+    <td align="center" valign="top">
+
+		<table border="0" width="100%" cellpadding="0" cellspacing="0">
+			<tbody><tr>
+				<td width="100%" valign="top">
+					<table border="0" cellpadding="0" cellspacing="0">
+						<tbody><tr>
+							<td width="688" height="510" bgcolor="#FFFFFF" align="center">
+								<div id="divTop" style="position:absolute;z-index:2;top:150px;left:30px; width:688px; height:510px; ">
+							<!--td width="688" height="510" bgcolor="#FFFFFF" align=center>
+								<div id=divTop style="position:absolute;z-index:2;top:150px;left:30px; width:688px; height:510px;"-->
+									<img id="photo01" style="image-rendering: -moz-crisp-edges; /* Firefox */ image-rendering: -o-crisp-edges; /* Opera */ image-rendering: -webkit-optimize-contrast; /* Webkit (non-standard naming) */ image-rendering: crisp-edges; -ms-interpolation-mode: nearest-neighbor; /* IE (non-standard property) */; display: " src="./hundai_files/1_1687320147.png" width="688" height="510" border="0" onclick="img_onclick(this.src);" alt="클릭하시면 원본이미지를 보실 수 있습니다.">
+									<font size="2" color="blue">해당 이미지를 클릭하시면 원본사이즈로 보실수 있습니다.</font>
+									<div id="dawul" style="position:absolute;z-index:2;top:-10px;left:-10px"><iframe id="ifimg" frameborder="0" src="./hundai_files/saved_resource.html" height="510" width="688" scrolling="no" style="width: 829px; height: 782px;"></iframe></div>
+								</div>
+							</td>
+						</tr>
+					</tbody></table>
+				</td>
+				<td width="265" valign="top">
+
+            <table width="265" border="0" cellspacing="0" cellpadding="0" id="rtbl">
+              <tbody><tr>
+                <td valign="top">
+
+									<table width="265" border="0" cellspacing="0" cellpadding="0">
+									<form name="frm_zoom" method="post" action="https://www.speedauction.co.kr/v3/M_view/zoom/info-result-zoom_print.php"></form>
+									<input type="hidden" name="mode" value="together">
+									<input type="hidden" name="courtNo" value="A05">
+									<input type="hidden" name="courtNo2" value="">
+									<input type="hidden" name="eventNo1" value="2022">
+									<input type="hidden" name="eventNo2" value="108633">
+									<input type="hidden" name="objNo" value="1">
+									<input type="hidden" name="t_cnt" value="11">
+																			<script>
+											$(document).ready(function(){
+												$("#eumlink").click(function(){
+												var link_href = 'https://www.eum.go.kr/web/mp/mpMapDet.jsp?detType=luLand&pnu=1129013300105080165&addr=%BC%AD%BF%EF%C6%AF%BA%B0%BD%C3+%BC%BA%BA%CF%B1%B8+%C1%A4%B8%AA%B5%BF+508-165+%C7%F6%B4%EB%C7%CF%C0%CC%C3%F7%BA%F4%B6%F3+%C1%A63%C3%FE+%C1%A6302%C8%A3';
+												//document.location=link;
+												//$(this).attr('target',"_blank");
+												//$(this).attr('href',link);
+												click_eum_map(link_href);
+												});
+
+												// $("#valuelink").click(function(){
+												// var vlaue_link = 'https://www.valueupmap.com/?lat=37.597653005059&lng=127.00437933753';
+												// click_value_map(vlaue_link);
+												// });
+											});
+											
+
+										function click_dawul_map(courtno,eventno1,eventno2,objno,lv){
+											var isold = '11';
+											var mapwidth = document.body.offsetWidth;
+											var mapheight = window.screen.availHeight;
+											window.dawul.style.display = "";
+											photo01.style.display = "none";
+											var w = mapwidth -310; var h = mapheight -174;
+											document.all["ifimg"].style.width = w;
+											document.all["ifimg"].style.height = h;
+//314034
+											if(isold > 6){
+											var ifimg = document.getElementById("ifimg");
+											ifimg.src = "/v3/M_view/zoom/dawul_map.php?courtNo=A05&eventNo1=2022&eventNo2=108633&objNo=1&lv="+lv;
+											}else{
+											var ifimg = document.getElementById("ifimg");
+											ifimg.src = "/v3/M_view/zoom/dawul_map_ie8.php?courtNo=A05&eventNo1=2022&eventNo2=108633&objNo=1&lv="+lv;
+
+											}
+											//var imginfoex = document.getElementById('imginfotxt');
+											//imginfoex.style.display = "none";
+											//imginfoex.innerHTML = "※ 마우스를 드래그 하시면 주변 검색을 하실 수 있습니다. (<font color=red>아파트의 경우 해당동호수를 찾으셔야합니다.</font>)";
+											resizeDiv();
+										}
+										function click_daum_map(courtno,eventno1,eventno2,objno,lv){
+											var isold = '11';
+											var mapwidth = document.body.offsetWidth;
+											var mapheight = window.screen.availHeight;
+											window.dawul.style.display = "";
+											photo01.style.display = "none";
+											var w = mapwidth -310; var h = mapheight -174;
+											document.all["ifimg"].style.width = w;
+											document.all["ifimg"].style.height = h;
+											var ifimg = document.getElementById("ifimg");
+											ifimg.src = "/v3/M_view/zoom/daum_map.php?courtNo="+courtno+"&eventNo1="+eventno1+"&eventNo2="+eventno2+"&objNo="+objno+"&lv="+lv;
+											
+											resizeDiv();
+										}
+										function click_daum_map_normal(courtno,eventno1,eventno2,objno,lv){
+											if(lv==5){
+												window.open("https://map.ngii.go.kr/ms/map/NlipMap.do", "국토정보맵", "width=1000, height=800, toolbar=no, menubar=no, scrollbars=no, resizable=yes" );
+											}else{
+												var isold = '11';
+												var mapwidth = document.body.offsetWidth;
+												var mapheight = window.screen.availHeight;
+												window.dawul.style.display = "";
+												photo01.style.display = "none";
+												var w = mapwidth -310; var h = mapheight -174;
+												document.all["ifimg"].style.width = w;
+												document.all["ifimg"].style.height = h;
+												var ifimg = document.getElementById("ifimg");
+												ifimg.src = "/v3/M_view/zoom/daum_map_normal.php?courtNo="+courtno+"&eventNo1="+eventno1+"&eventNo2="+eventno2+"&objNo="+objno+"&lv="+lv;
+												
+												resizeDiv();
+											}
+										}
+										function click_daum_map_skyview(courtno,eventno1,eventno2,objno,lv){										
+											var isold = '11';
+											var mapwidth = document.body.offsetWidth;
+											var mapheight = window.screen.availHeight;
+											window.dawul.style.display = "";
+											photo01.style.display = "none";
+											var w = mapwidth -310; var h = mapheight -174;
+											document.all["ifimg"].style.width = w;
+											document.all["ifimg"].style.height = h;
+											var ifimg = document.getElementById("ifimg");
+											ifimg.src = "/v3/M_view/zoom/daum_map_skyview.php?courtNo="+courtno+"&eventNo1="+eventno1+"&eventNo2="+eventno2+"&objNo="+objno+"&lv="+lv;
+											
+											resizeDiv();
+										}
+
+										function click_naver_map(courtno,eventno1,eventno2,objno){										
+											var isold = '11';
+											var mapwidth = document.body.offsetWidth;
+											var mapheight = window.screen.availHeight;
+											window.dawul.style.display = "";
+											photo01.style.display = "none";
+											var w = mapwidth -310; var h = mapheight -174;
+											document.all["ifimg"].style.width = w;
+											document.all["ifimg"].style.height = h;
+											var ifimg = document.getElementById("ifimg");
+											ifimg.src = "/v3/M_view/zoom/naver_map_platform.php?courtNo="+courtno+"&eventNo1="+eventno1+"&eventNo2="+eventno2+"&objNo="+objno;
+											
+											resizeDiv();
+										}
+
+										function click_eum_map(link){										
+											var isold = '11';
+											var mapwidth = document.body.offsetWidth;
+											var mapheight = window.screen.availHeight;
+											window.dawul.style.display = "";
+											photo01.style.display = "none";
+											var w = mapwidth -310; var h = mapheight -174;
+											document.all["ifimg"].style.width = w;
+											document.all["ifimg"].style.height = h;
+											var ifimg = document.getElementById("ifimg");
+											ifimg.src = link;
+											
+											resizeDiv();
+										}
+										function click_value_map(link){										
+											var isold = '11';
+											var mapwidth = document.body.offsetWidth;
+											var mapheight = window.screen.availHeight;
+											window.dawul.style.display = "";
+											photo01.style.display = "none";
+											var w = mapwidth -310; var h = mapheight -174;
+											document.all["ifimg"].style.width = w;
+											document.all["ifimg"].style.height = h;
+											var ifimg = document.getElementById("ifimg");
+											ifimg.src = link;
+											
+											resizeDiv();
+										}
+										
+										function click_location_h(courtno,eventno1,eventno2,objno,lv){
+											alert("준비중");
+											window.open("https://www.naver.com", "국토정보맵", "width=800, height=700, toolbar=no, menubar=no, scrollbars=no, resizable=yes" );
+										}
+
+
+										window.onresize = function (){
+											resizeDiv();
+										}
+
+										function resizeDiv(){
+											var isOld = "";
+											var ifimg = document.getElementById("ifimg");
+											var w = document.body.offsetWidth;
+											var h = document.body.clientHeight;
+											if( ( w - 320 ) < 688 ) w = 688; else w = w - 310;
+											if( ( h - 180 ) < 510 ) h = 510; else h = h - 180;
+											document.all["ifimg"].style.width =  w;
+											document.all["ifimg"].style.height = h;
+											if( isOld == "1"){
+												var t = $("#ifimg").width() + $("#rtbl").width() + 50;
+												var owin = $(window).width();
+												if ( t > owin ){
+													w = w - (t - owin);
+													document.all["ifimg"].style.width =  w;
+												}
+											}
+											
+											try{
+												ifimg.contentWindow.MapResizeParent();
+											}catch(e){}
+										}
+										</script>
+								<tbody><tr>												<td width="86" valign="top">
+													<table width="86" border="0" cellspacing="0" cellpadding="0">
+														<tbody><tr>
+															<td>
+																<table width="86" border="0" cellpadding="0" cellspacing="1" bgcolor="E3E3E3">
+																	<tbody><tr>
+																		<td bgcolor="#FFFFFF" class="xxx"> <center><img style="image-rendering: -moz-crisp-edges; /* Firefox */ image-rendering: -o-crisp-edges; /* Opera */ image-rendering: -webkit-optimize-contrast; /* Webkit (non-standard naming) */ image-rendering: crisp-edges; -ms-interpolation-mode: nearest-neighbor; /* IE (non-standard property) */" src="./hundai_files/1_1687320147(1).png" width="84" height="63" !onmouseover="fn_view_img(&#39;https://img1.speedauction.co.kr/new_gamimg/2023/A05/2022/108633/1_1687320147.png&#39;,&#39;688&#39;,&#39;510&#39;);" onclick="fn_view_img(&#39;https://img1.speedauction.co.kr/new_gamimg/2023/A05/2022/108633/1_1687320147.png&#39;,&#39;688&#39;,&#39;510&#39;);"></center></td>
+																	</tr>
+																</tbody></table>
+															</td>
+														</tr>
+														<tr>
+															<td height="22"> <input type="checkbox" name="imgfilename0" value="http://img1.speedauction.co.kr/new_gamimg/2023/A05/2022/108633/1_1687320147.png"> 현장사진1 </td>
+														</tr>
+														<tr>
+															<td height="7"></td>
+														</tr>
+													</tbody></table>
+												</td>
+									<td></td>												<td width="86" valign="top">
+													<table width="86" border="0" cellspacing="0" cellpadding="0">
+														<tbody><tr>
+															<td>
+																<table width="86" border="0" cellpadding="0" cellspacing="1" bgcolor="E3E3E3">
+																	<tbody><tr>
+																		<td bgcolor="#FFFFFF" class="xxx"> <center><img style="image-rendering: -moz-crisp-edges; /* Firefox */ image-rendering: -o-crisp-edges; /* Opera */ image-rendering: -webkit-optimize-contrast; /* Webkit (non-standard naming) */ image-rendering: crisp-edges; -ms-interpolation-mode: nearest-neighbor; /* IE (non-standard property) */" src="./hundai_files/2_1687320147.png" width="84" height="63" !onmouseover="fn_view_img(&#39;https://img1.speedauction.co.kr/new_gamimg/2023/A05/2022/108633/2_1687320147.png&#39;,&#39;688&#39;,&#39;510&#39;);" onclick="fn_view_img(&#39;https://img1.speedauction.co.kr/new_gamimg/2023/A05/2022/108633/2_1687320147.png&#39;,&#39;688&#39;,&#39;510&#39;);"></center></td>
+																	</tr>
+																</tbody></table>
+															</td>
+														</tr>
+														<tr>
+															<td height="22"> <input type="checkbox" name="imgfilename1" value="http://img1.speedauction.co.kr/new_gamimg/2023/A05/2022/108633/2_1687320147.png"> 현장사진2 </td>
+														</tr>
+														<tr>
+															<td height="7"></td>
+														</tr>
+													</tbody></table>
+												</td>
+									<td></td>												<td width="86" valign="top">
+													<table width="86" border="0" cellspacing="0" cellpadding="0">
+														<tbody><tr>
+															<td>
+																<table width="86" border="0" cellpadding="0" cellspacing="1" bgcolor="E3E3E3">
+																	<tbody><tr>
+																		<td bgcolor="#FFFFFF" class="xxx"> <center><img style="image-rendering: -moz-crisp-edges; /* Firefox */ image-rendering: -o-crisp-edges; /* Opera */ image-rendering: -webkit-optimize-contrast; /* Webkit (non-standard naming) */ image-rendering: crisp-edges; -ms-interpolation-mode: nearest-neighbor; /* IE (non-standard property) */" src="./hundai_files/3_1687320147.png" width="84" height="63" !onmouseover="fn_view_img(&#39;https://img1.speedauction.co.kr/new_gamimg/2023/A05/2022/108633/3_1687320147.png&#39;,&#39;688&#39;,&#39;510&#39;);" onclick="fn_view_img(&#39;https://img1.speedauction.co.kr/new_gamimg/2023/A05/2022/108633/3_1687320147.png&#39;,&#39;688&#39;,&#39;510&#39;);"></center></td>
+																	</tr>
+																</tbody></table>
+															</td>
+														</tr>
+														<tr>
+															<td height="22"> <input type="checkbox" name="imgfilename2" value="http://img1.speedauction.co.kr/new_gamimg/2023/A05/2022/108633/3_1687320147.png"> 현장사진3 </td>
+														</tr>
+														<tr>
+															<td height="7"></td>
+														</tr>
+													</tbody></table>
+												</td>
+									</tr><tr>												<td width="86" valign="top">
+													<table width="86" border="0" cellspacing="0" cellpadding="0">
+														<tbody><tr>
+															<td>
+																<table width="86" border="0" cellpadding="0" cellspacing="1" bgcolor="E3E3E3">
+																	<tbody><tr>
+																		<td bgcolor="#FFFFFF" class="xxx"> <center><img style="image-rendering: -moz-crisp-edges; /* Firefox */ image-rendering: -o-crisp-edges; /* Opera */ image-rendering: -webkit-optimize-contrast; /* Webkit (non-standard naming) */ image-rendering: crisp-edges; -ms-interpolation-mode: nearest-neighbor; /* IE (non-standard property) */" src="./hundai_files/154136.jpg" width="84" height="63" !onmouseover="fn_view_img(&#39;https://img1.speedauction.co.kr/new_gamimg/2023/A05/2022/108633/154136.jpg&#39;,&#39;688&#39;,&#39;510&#39;);" onclick="fn_view_img(&#39;https://img1.speedauction.co.kr/new_gamimg/2023/A05/2022/108633/154136.jpg&#39;,&#39;688&#39;,&#39;510&#39;);"></center></td>
+																	</tr>
+																</tbody></table>
+															</td>
+														</tr>
+														<tr>
+															<td height="22"> <input type="checkbox" name="imgfilename3" value="http://img1.speedauction.co.kr/new_gamimg/2023/A05/2022/108633/154136.jpg"> 사진1 </td>
+														</tr>
+														<tr>
+															<td height="7"></td>
+														</tr>
+													</tbody></table>
+												</td>
+									<td></td>												<td width="86" valign="top">
+													<table width="86" border="0" cellspacing="0" cellpadding="0">
+														<tbody><tr>
+															<td>
+																<table width="86" border="0" cellpadding="0" cellspacing="1" bgcolor="E3E3E3">
+																	<tbody><tr>
+																		<td bgcolor="#FFFFFF" class="xxx"> <center><img style="image-rendering: -moz-crisp-edges; /* Firefox */ image-rendering: -o-crisp-edges; /* Opera */ image-rendering: -webkit-optimize-contrast; /* Webkit (non-standard naming) */ image-rendering: crisp-edges; -ms-interpolation-mode: nearest-neighbor; /* IE (non-standard property) */" src="./hundai_files/154135.jpg" width="84" height="63" !onmouseover="fn_view_img(&#39;https://img1.speedauction.co.kr/new_gamimg/2023/A05/2022/108633/154135.jpg&#39;,&#39;688&#39;,&#39;510&#39;);" onclick="fn_view_img(&#39;https://img1.speedauction.co.kr/new_gamimg/2023/A05/2022/108633/154135.jpg&#39;,&#39;688&#39;,&#39;510&#39;);"></center></td>
+																	</tr>
+																</tbody></table>
+															</td>
+														</tr>
+														<tr>
+															<td height="22"> <input type="checkbox" name="imgfilename4" value="http://img1.speedauction.co.kr/new_gamimg/2023/A05/2022/108633/154135.jpg"> 사진2 </td>
+														</tr>
+														<tr>
+															<td height="7"></td>
+														</tr>
+													</tbody></table>
+												</td>
+									<td></td>												<td width="86" valign="top">
+													<table width="86" border="0" cellspacing="0" cellpadding="0">
+														<tbody><tr>
+															<td>
+																<table width="86" border="0" cellpadding="0" cellspacing="1" bgcolor="E3E3E3">
+																	<tbody><tr>
+																		<td bgcolor="#FFFFFF" class="xxx"> <center><img style="image-rendering: -moz-crisp-edges; /* Firefox */ image-rendering: -o-crisp-edges; /* Opera */ image-rendering: -webkit-optimize-contrast; /* Webkit (non-standard naming) */ image-rendering: crisp-edges; -ms-interpolation-mode: nearest-neighbor; /* IE (non-standard property) */" src="./hundai_files/154132.jpg" width="84" height="63" !onmouseover="fn_view_img(&#39;https://img1.speedauction.co.kr/new_gamimg/2023/A05/2022/108633/154132.jpg&#39;,&#39;688&#39;,&#39;510&#39;);" onclick="fn_view_img(&#39;https://img1.speedauction.co.kr/new_gamimg/2023/A05/2022/108633/154132.jpg&#39;,&#39;688&#39;,&#39;510&#39;);"></center></td>
+																	</tr>
+																</tbody></table>
+															</td>
+														</tr>
+														<tr>
+															<td height="22"> <input type="checkbox" name="imgfilename5" value="http://img1.speedauction.co.kr/new_gamimg/2023/A05/2022/108633/154132.jpg"> 사진3 </td>
+														</tr>
+														<tr>
+															<td height="7"></td>
+														</tr>
+													</tbody></table>
+												</td>
+									</tr><tr>												<td width="86" valign="top">
+													<table width="86" border="0" cellspacing="0" cellpadding="0">
+														<tbody><tr>
+															<td>
+																<table width="86" border="0" cellpadding="0" cellspacing="1" bgcolor="E3E3E3">
+																	<tbody><tr>
+																		<td bgcolor="#FFFFFF" class="xxx"> <center><img style="image-rendering: -moz-crisp-edges; /* Firefox */ image-rendering: -o-crisp-edges; /* Opera */ image-rendering: -webkit-optimize-contrast; /* Webkit (non-standard naming) */ image-rendering: crisp-edges; -ms-interpolation-mode: nearest-neighbor; /* IE (non-standard property) */" src="./hundai_files/154138.jpg" width="84" height="63" !onmouseover="fn_view_img(&#39;https://img1.speedauction.co.kr/new_gamimg/2023/A05/2022/108633/154138.jpg&#39;,&#39;688&#39;,&#39;510&#39;);" onclick="fn_view_img(&#39;https://img1.speedauction.co.kr/new_gamimg/2023/A05/2022/108633/154138.jpg&#39;,&#39;688&#39;,&#39;510&#39;);"></center></td>
+																	</tr>
+																</tbody></table>
+															</td>
+														</tr>
+														<tr>
+															<td height="22"> <input type="checkbox" name="imgfilename6" value="http://img1.speedauction.co.kr/new_gamimg/2023/A05/2022/108633/154138.jpg"> 사진4 </td>
+														</tr>
+														<tr>
+															<td height="7"></td>
+														</tr>
+													</tbody></table>
+												</td>
+									<td></td>												<td width="86" valign="top">
+													<table width="86" border="0" cellspacing="0" cellpadding="0">
+														<tbody><tr>
+															<td>
+																<table width="86" border="0" cellpadding="0" cellspacing="1" bgcolor="E3E3E3">
+																	<tbody><tr>
+																		<td bgcolor="#FFFFFF" class="xxx"> <center><img style="image-rendering: -moz-crisp-edges; /* Firefox */ image-rendering: -o-crisp-edges; /* Opera */ image-rendering: -webkit-optimize-contrast; /* Webkit (non-standard naming) */ image-rendering: crisp-edges; -ms-interpolation-mode: nearest-neighbor; /* IE (non-standard property) */" src="./hundai_files/154137.jpg" width="84" height="63" !onmouseover="fn_view_img(&#39;https://img1.speedauction.co.kr/new_gamimg/2023/A05/2022/108633/154137.jpg&#39;,&#39;688&#39;,&#39;510&#39;);" onclick="fn_view_img(&#39;https://img1.speedauction.co.kr/new_gamimg/2023/A05/2022/108633/154137.jpg&#39;,&#39;688&#39;,&#39;510&#39;);"></center></td>
+																	</tr>
+																</tbody></table>
+															</td>
+														</tr>
+														<tr>
+															<td height="22"> <input type="checkbox" name="imgfilename7" value="http://img1.speedauction.co.kr/new_gamimg/2023/A05/2022/108633/154137.jpg"> 사진5 </td>
+														</tr>
+														<tr>
+															<td height="7"></td>
+														</tr>
+													</tbody></table>
+												</td>
+									<td></td>												<td width="86" valign="top">
+													<table width="86" border="0" cellspacing="0" cellpadding="0">
+														<tbody><tr>
+															<td>
+																<table width="86" border="0" cellpadding="0" cellspacing="1" bgcolor="E3E3E3">
+																	<tbody><tr>
+																		<td bgcolor="#FFFFFF" class="xxx"> <center><img style="image-rendering: -moz-crisp-edges; /* Firefox */ image-rendering: -o-crisp-edges; /* Opera */ image-rendering: -webkit-optimize-contrast; /* Webkit (non-standard naming) */ image-rendering: crisp-edges; -ms-interpolation-mode: nearest-neighbor; /* IE (non-standard property) */" src="./hundai_files/154133.jpg" width="84" height="63" !onmouseover="fn_view_img(&#39;https://img1.speedauction.co.kr/new_gamimg/2023/A05/2022/108633/154133.jpg&#39;,&#39;688&#39;,&#39;510&#39;);" onclick="fn_view_img(&#39;https://img1.speedauction.co.kr/new_gamimg/2023/A05/2022/108633/154133.jpg&#39;,&#39;688&#39;,&#39;510&#39;);"></center></td>
+																	</tr>
+																</tbody></table>
+															</td>
+														</tr>
+														<tr>
+															<td height="22"> <input type="checkbox" name="imgfilename8" value="http://img1.speedauction.co.kr/new_gamimg/2023/A05/2022/108633/154133.jpg"> 기타사진 </td>
+														</tr>
+														<tr>
+															<td height="7"></td>
+														</tr>
+													</tbody></table>
+												</td>
+									</tr><tr>												<td width="86" valign="top">
+													<table width="86" border="0" cellspacing="0" cellpadding="0">
+														<tbody><tr>
+															<td>
+																<table width="86" border="0" cellpadding="0" cellspacing="1" bgcolor="E3E3E3">
+																	<tbody><tr>
+																		<td bgcolor="#FFFFFF" class="xxx"> <center><img style="image-rendering: -moz-crisp-edges; /* Firefox */ image-rendering: -o-crisp-edges; /* Opera */ image-rendering: -webkit-optimize-contrast; /* Webkit (non-standard naming) */ image-rendering: crisp-edges; -ms-interpolation-mode: nearest-neighbor; /* IE (non-standard property) */" src="./hundai_files/42550_AUTO_235.jpg" width="84" height="63" !onmouseover="fn_view_img(&#39;https://img1.speedauction.co.kr/new_gamimg/2023/A05/2022/108633/42550_AUTO_235.jpg&#39;,&#39;688&#39;,&#39;510&#39;);" onclick="fn_view_img(&#39;https://img1.speedauction.co.kr/new_gamimg/2023/A05/2022/108633/42550_AUTO_235.jpg&#39;,&#39;688&#39;,&#39;510&#39;);"></center></td>
+																	</tr>
+																</tbody></table>
+															</td>
+														</tr>
+														<tr>
+															<td height="22"> <input type="checkbox" name="imgfilename9" value="http://img1.speedauction.co.kr/new_gamimg/2023/A05/2022/108633/42550_AUTO_235.jpg"> 위치도 </td>
+														</tr>
+														<tr>
+															<td height="7"></td>
+														</tr>
+													</tbody></table>
+												</td>
+									<td></td>												<td width="86" valign="top">
+													<table width="86" border="0" cellspacing="0" cellpadding="0">
+														<tbody><tr>
+															<td>
+																<table width="86" border="0" cellpadding="0" cellspacing="1" bgcolor="E3E3E3">
+																	<tbody><tr>
+																		<td bgcolor="#FFFFFF" class="xxx"> <center><img style="image-rendering: -moz-crisp-edges; /* Firefox */ image-rendering: -o-crisp-edges; /* Opera */ image-rendering: -webkit-optimize-contrast; /* Webkit (non-standard naming) */ image-rendering: crisp-edges; -ms-interpolation-mode: nearest-neighbor; /* IE (non-standard property) */" src="./hundai_files/45910_AUTO_236.jpg" width="84" height="63" !onmouseover="fn_view_img(&#39;https://img1.speedauction.co.kr/new_gamimg/2023/A05/2022/108633/45910_AUTO_236.jpg&#39;,&#39;688&#39;,&#39;510&#39;);" onclick="fn_view_img(&#39;https://img1.speedauction.co.kr/new_gamimg/2023/A05/2022/108633/45910_AUTO_236.jpg&#39;,&#39;688&#39;,&#39;510&#39;);"></center></td>
+																	</tr>
+																</tbody></table>
+															</td>
+														</tr>
+														<tr>
+															<td height="22"> <input type="checkbox" name="imgfilename10" value="http://img1.speedauction.co.kr/new_gamimg/2023/A05/2022/108633/45910_AUTO_236.jpg"> 내부구조도 </td>
+														</tr>
+														<tr>
+															<td height="7"></td>
+														</tr>
+													</tbody></table>
+												</td>
+									<td></td>												<td width="86" valign="top">
+													<table width="86" border="0" cellspacing="0" cellpadding="0">
+														<tbody><tr>
+															<td>
+																<table width="86" border="0" cellpadding="0" cellspacing="1" bgcolor="E3E3E3">
+																	<tbody><tr>
+																		<td bgcolor="#FFFFFF" class="xxx"><a href="javascript:click_daum_map(&#39;A05&#39;,&#39;2022&#39;,&#39;108633&#39;,&#39;1&#39;,1)"><img src="./hundai_files/kakaomap_2000.png" width="84" height="63"></a></td>
+																	</tr>
+																</tbody></table>
+															</td>
+														</tr>
+														<tr>
+															<td height="22"> <center>지적편집도</center> </td>
+														</tr>
+														<tr>
+															<td height="7"></td>
+														</tr>
+													</tbody></table>
+												</td>
+									</tr><tr>												<td width="86" valign="top">
+													<table width="86" border="0" cellspacing="0" cellpadding="0">
+														<tbody><tr>
+															<td>
+																<table width="86" border="0" cellpadding="0" cellspacing="1" bgcolor="E3E3E3">
+																	<tbody><tr>
+																		<td bgcolor="#FFFFFF" class="xxx"><a href="javascript:click_daum_map_normal(&#39;A05&#39;,&#39;2022&#39;,&#39;108633&#39;,&#39;1&#39;,1)"><img src="./hundai_files/kakaomap_2000.png" width="84" height="63"></a></td>
+																	</tr>
+																</tbody></table>
+															</td>
+														</tr>
+														<tr>
+															<td height="22"> <center>전자지도</center> </td>
+														</tr>
+														<tr>
+															<td height="7"></td>
+														</tr>
+													</tbody></table>
+												</td>
+									<td></td>												<td width="86" valign="top">
+													<table width="86" border="0" cellspacing="0" cellpadding="0">
+														<tbody><tr>
+															<td>
+																<table width="86" border="0" cellpadding="0" cellspacing="1" bgcolor="E3E3E3">
+																	<tbody><tr>
+																		<td bgcolor="#FFFFFF" class="xxx"><a href="javascript:click_daum_map_skyview(&#39;A05&#39;,&#39;2022&#39;,&#39;108633&#39;,&#39;1&#39;,1)"><img src="./hundai_files/kakaomap_2000.png" width="84" height="63"></a></td>
+																	</tr>
+																</tbody></table>
+															</td>
+														</tr>
+														<tr>
+															<td height="22"> <center>스카이뷰</center> </td>
+														</tr>
+														<tr>
+															<td height="7"></td>
+														</tr>
+													</tbody></table>
+												</td>
+									<td></td>												<td width="86" valign="top">
+													<table width="86" border="0" cellspacing="0" cellpadding="0">
+														<tbody><tr>
+															<td>
+																<table width="86" border="0" cellpadding="0" cellspacing="1" bgcolor="E3E3E3">
+																	<tbody><tr>
+																		<td bgcolor="#FFFFFF" class="xxx"><a href="javascript:click_naver_map(&#39;A05&#39;,&#39;2022&#39;,&#39;108633&#39;,&#39;1&#39;)"><img src="./hundai_files/kakaomap_2000.png" width="84" height="63"></a></td>
+																	</tr>
+																</tbody></table>
+															</td>
+														</tr>
+														<tr>
+															<td height="22"> <center>네이버종합</center> </td>
+														</tr>
+														<tr>
+															<td height="7"></td>
+														</tr>
+													</tbody></table>
+												</td>
+									</tr><tr>												<td width="86" valign="top">
+													<table width="86" border="0" cellspacing="0" cellpadding="0">
+														<tbody><tr>
+															<td>
+																<table width="86" border="0" cellpadding="0" cellspacing="1" bgcolor="E3E3E3">
+																	<tbody><tr>
+																		<td bgcolor="#FFFFFF" class="xxx"><a href="javascript:;" id="eumlink"><img src="./hundai_files/kakaomap_2000.png" width="84" height="63"></a></td>
+																	</tr>
+																</tbody></table>
+															</td>
+														</tr>
+														<tr>
+															<td height="22"> <center>토지이음</center> </td>
+														</tr>
+														<tr>
+															<td height="7"></td>
+														</tr>
+													</tbody></table>
+												</td>
+									<td></td>												<td width="86" valign="top">
+													<table width="86" border="0" cellspacing="0" cellpadding="0">
+														<tbody><tr>
+															<td>
+																<table width="86" border="0" cellpadding="0" cellspacing="1" bgcolor="E3E3E3">
+																	<tbody><tr>
+																		<td bgcolor="#FFFFFF" class="xxx"><a href="https://www.valueupmap.com/?lat=37.597653005059&amp;lng=127.00437933753" id="valuelink" target="_blank"><img src="./hundai_files/kakaomap_2000.png" width="84" height="63"></a></td>
+																	</tr>
+																</tbody></table>
+															</td>
+														</tr>
+														<tr>
+															<td height="22"> <center>밸류맵</center> </td>
+														</tr>
+														<tr>
+															<td height="7"></td>
+														</tr>
+													</tbody></table>
+												</td>
+									<td></td>										
+										</tr><tr>
+											<td width="86"></td>
+											<td width="4"></td>
+											<td width="86"></td>
+											<td width="3"></td>
+											<td width="86"></td>
+										</tr>
+										</tbody></table>
+									</td>
+								</tr>
+								<tr>
+									<td><a href="javascript:fn_zoom_print_together(&#39;info-result-zoom_print.php&#39;);"><img src="./hundai_files/201201infosub00-2.gif" width="74" height="20"></a>
+										<!--a href="#" onclick="NewWindow('/v3/M09/mypage/mms01.php?courtNo=A05&eventNo1=2022&eventNo2=108633&objNo=1','mms',650,750,'yes','')"><img src="/v3/images/v2_move/img2009/photo/2009photo_view25.gif" width="78" height="20"></a-->
+										<a href="javascript:self.close();"><img src="./hundai_files/201201infosub00-3.gif" width="44" height="20" border="0"></a>
+																				<span id="idw"></span>
+										</td>
+								</tr>
+								<tr>
+									<td height="10"></td>
+								</tr>
+								<tr>
+									<td>
+										<table width="265" border="0" cellspacing="0" cellpadding="0">
+											<tbody><tr>
+												<td height="20" class="small01"><font color="6D6D6D">- 선택한 이미지만 출력하실 수 있습니다.</font></td>
+											</tr>
+											<tr>
+												<td height="1" bgcolor="EFEFEF"></td>
+											</tr>
+											<tr>
+												<td height="20" class="small01"><font color="6D6D6D">- 이미지 휴대폰에 담기는 최대 3개까지입니다.</font></td>
+											</tr>
+										</tbody></table>
+									</td>
+								</tr>
+							</tbody></table>
+
+				</td>
+			</tr>
+		</tbody></table>
+	</td>
+</tr>
+</tbody></table>
+<script type="text/javascript">
+	var member_code = '473530';
+	$(document).ready(function(){ 
+
+		var currentPosition = parseInt($("#divTop").css("top")); 
+		$(window).scroll(function() {
+			var position = $(window).scrollTop(); // 현재 스크롤바의 위치값을 반환합니다.
+			$("#divTop").stop().animate({"top":position+currentPosition+"px"},10);
+		});
+
+		// 스크롤바 위치값 수정, LJH, 2023-03-27, 500 => 10
+		// $("#divTop").stop().animate({"top":position+currentPosition+"px"},500);
+
+		// divTop id를 가지는 태그에 마우스가 올라가거나 스크롤을 가하거나 휠이 움직일시 제어시작
+		//   312374
+		/*
+		$('#divTop').mouseover(function(e){
+			$('html, body').css({'overflow': 'hidden', 'height': '100%'});
+			$('html, body').scrollTop(0);
+		});
+		$('#divTop').mouseout(function(){
+			$('html, body').css({'overflow': 'visible', 'height': '100%'});
+		});
+		
+
+
+		$("#test").click(function(){
+			alert( $(window).width() );
+		});
+		*/
+	});
+</script>
+<script language="javascript">
+<!--
+document.zoom_print.filename.value='http://img1.speedauction.co.kr/new_gamimg/2023/A05/2022/108633/1_1687320147.png';
+-->
+</script>
+<script type="text/javascript">
+<!--
+//alert( window.screen.availWidth + ' ' + window.screen.availHeight );
+var w = window.screen.availWidth;
+var h = window.screen.availHeight;
+
+//if( w > 1070 ) w = 1070;
+w = 1170;
+window.resizeTo(w,h);
+//-->
+</script>
+
+
+</body></html>

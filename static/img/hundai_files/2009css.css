@@ -1,0 +1,112 @@
+<STYLE type=text/css>
+
+BODY
+{
+
+   scrollbar-face-color: #F2F2F2;
+   scrollbar-shadow-color: #999999;
+   scrollbar-highlight-color: #999999;
+   scrollbar-3dlight-color: #FFFFFF;
+   scrollbar-darkshadow-color: #FFFFFF;
+   scrollbar-track-color: #F2F2F2;
+   scrollbar-arrow-color: #999999
+}
+
+
+/* 본문 */
+td {font-family:Gulim; font-size: 9pt; color: #484848; line-height:18px;}
+
+A {color: #444444}
+A:link {font-family:굴림; font-size: 9pt; color: #444444; text-decoration:none}
+A:visited {font-family:굴림; font-size: 9pt; color: #7C7C7C; text-decoration:none}
+A:active {font-family:굴림; font-size: 9pt; color: #444444; text-decoration:none}
+A:hover {font-family:굴림; font-size: 9pt; color: #000000; text-decoration:none}
+
+A.no1:link    { COLOR: #5A595A; FONT-FAMILY: Dotum, 돋움, Tahoma, Seoul; font-size:11px;letter-spacing: -1px; TEXT-DECORATION: none }
+A.no1:visited { COLOR: #5A595A; FONT-FAMILY: Dotum, 돋움, Tahoma, Seoul; font-size:11px;letter-spacing: -1px; TEXT-DECORATION: none }
+A.no1:active  { COLOR: #5A595A; FONT-FAMILY: Dotum, 돋움, Tahoma, Seoul; font-size:11px;letter-spacing: -1px; TEXT-DECORATION: none }
+A.no1:hover   { COLOR: #2E2E2E; FONT-FAMILY: Dotum, 돋움, Tahoma, Seoul; font-size:11px;letter-spacing: -1px; TEXT-DECORATION: underline }
+
+A.no1bold:link    { COLOR: #5A595A; FONT-FAMILY: Dotum, 돋움, Tahoma, Seoul; font-size:11px;letter-spacing: -1px; TEXT-DECORATION: none; font-weight: bold }
+A.no1bold:visited { COLOR: #5A595A; FONT-FAMILY: Dotum, 돋움, Tahoma, Seoul; font-size:11px;letter-spacing: -1px; TEXT-DECORATION: none; font-weight: bold }
+A.no1bold:active  { COLOR: #5A595A; FONT-FAMILY: Dotum, 돋움, Tahoma, Seoul; font-size:11px;letter-spacing: -1px; TEXT-DECORATION: none; font-weight: bold }
+A.no1bold:hover   { COLOR: #2E2E2E; FONT-FAMILY: Dotum, 돋움, Tahoma, Seoul; font-size:11px;letter-spacing: -1px; TEXT-DECORATION: underline; font-weight: bold }
+
+A.no2:link    { COLOR: #5A595A; FONT-FAMILY: Gulim, 돋움, Tahoma, Seoul; font-size:11px; line-height : 14px;letter-spacing: -1px; TEXT-DECORATION: none }
+A.no2:visited { COLOR: #5A595A; FONT-FAMILY: Gulim, 돋움, Tahoma, Seoul; font-size:11px; line-height : 14px;letter-spacing: -1px; TEXT-DECORATION: none }
+A.no2:active  { COLOR: #5A595A; FONT-FAMILY: Gulim, 돋움, Tahoma, Seoul; font-size:11px; line-height : 14px;letter-spacing: -1px; TEXT-DECORATION: none }
+A.no2:hover   { COLOR: #2E2E2E; FONT-FAMILY: Gulim, 돋움, Tahoma, Seoul; font-size:11px; line-height : 14px;letter-spacing: -1px; TEXT-DECORATION: underline }
+
+/* 이미지 border=0 */
+img {border:0}
+
+/* input box 스타일*/
+input,textarea, select{font-family:돋움;font-size:9pt;color:#444444;}
+
+/*지역타이틀*/
+.title01 { color:#222222; font-family:  Gulim, 돋움, Tahoma, Seoul; font-size:14px; line-height : 18px; font-weight: bold;}
+
+/* 공지 화이트 텍스트*/
+.white{font-family:"돋움";	font-size:9pt; color: #FFFFFF; line-height:18px; text-decoration: none;}
+a.white:active {  font-family: "돋움", "verdana", "arial"; font-size: 9pt; line-height: 18px; color: #ffffff; text-decoration: none}
+a.white:link {  font-family: "돋움", "Verdana", "Arial"; font-size: 9pt; line-height: 18px; color: #ffffff; text-decoration: none}
+a.white:visited {  font-family: "돋움", "Verdana", "Arial"; font-size: 9pt; line-height: 18px; color: #E0E0E0; text-decoration: none}
+a.white:hover {  font-family: "돋움", "Verdana", "Arial"; font-size: 9pt; line-height: 18px; color: #E0E0E0; text-decoration: none}
+
+
+/*  소타이틀*/
+a.mu_01:active {  font-family: "돋움", "verdana", "arial"; font-size: 9pt; line-height: 18px; color: #004286; text-decoration: none}
+a.mu_01:link {  font-family: "돋움", "Verdana", "Arial"; font-size: 9pt; line-height: 18px; color: #004286; text-decoration: none}
+a.mu_01:visited {  font-family: "돋움", "Verdana", "Arial"; font-size: 9pt; line-height: 18px; color: #8E8A7E; text-decoration: none}
+a.mu_01:hover {  font-family: "돋움", "Verdana", "Arial"; font-size: 9pt; line-height: 18px; color: #8E8A7E; text-decoration: none}
+
+/*상세페이지 상품이름/*/
+.name_01 {  font-family: "돋움", "Verdana", "Arial"; font-size: 11pt; line-height: 18px; color: #FF4200; text-decoration: none; font-weight: bold}
+
+/*할인전금액 표시 가운데줄 포함 / 가격*/
+.custprice {  font-family: "돋움", "Verdana", "Arial"; font-size: 9pt; line-height: 18px; color: #818181; text-decoration: line-through; font-weight: bold}
+.price {  font-family: "돋움", "Verdana", "Arial"; font-size: 9pt; line-height: 18px; color: #FF5400; text-decoration: none; font-weight: bold}
+
+/* 특수텍스트*/
+.small01 { color:#5A595A; font-family:  Dotum, 돋움, Tahoma, Seoul; font-size:11px; line-height : 16px;letter-spacing: -1px;}
+.small02 { color:#5A595A; font-family:  Dotum, 돋움, Tahoma, Seoul; font-size:11px; line-height : 16px;}
+.small03 { color:#FFFFFF; font-family:  Dotum, 돋움, Tahoma, Seoul; font-size:11px; line-height : 16px;letter-spacing: -1px;}
+.small04 { color:#5A595A; font-family:  Dotum, 돋움, Tahoma, Seoul; font-size:11px; line-height : 16px;letter-spacing: 0px;}
+.small05 { color:#FF6600; font-family:  Dotum, 돋움, Tahoma, Seoul; font-size:11px; line-height : 16px;letter-spacing: -1px;}
+.small06 { color:#999999; font-family:  Dotum, 돋움, Tahoma, Seoul; font-size:11px; line-height : 16px;letter-spacing: -1px;}
+.basket02 { color:#595959; font-family:  Gulim, 돋움, Tahoma, Seoul; font-size:14px; line-height : 18px; font-weight: bold;}
+.price{font-family:돋움; font-size:12px; color:#FD5822; line-height:16px; text-decoration:none; font-weight: bold;}
+.sp01 { color:#7C7C7C; font-family:  Gulim, 돋움, Tahoma, Seoul; font-size:12px; line-height : 16px; TEXT-DECORATION:line-through;}
+
+/*좌측 개인정보*/
+.log_title {  font-family: "굴림", "Verdana", "Arial"; font-size: 9pt; line-height: 18px; color: #FF3600; text-decoration: none; font-weight: bold}
+.log_01 {  font-family: "굴림", "Verdana", "Arial"; font-size: 9pt; line-height: 18px; color: #505050; text-decoration: none; font-weight: none}
+.log_02 {  font-family: "굴림", "Verdana", "Arial"; font-size: 9pt; line-height: 18px; color: #505050; text-decoration: none; font-weight: bold}
+.log_03 {  font-family: "굴림", "Verdana", "Arial"; font-size: 9pt; line-height: 18px; color: #717171; text-decoration: none; font-weight: bold}
+.log_04 {  font-family: "굴림", "Verdana", "Arial"; font-size: 9pt; line-height: 18px; color: #AF7D26; text-decoration: none; font-weight: none}
+.log_05 {  font-family: "굴림", "Verdana", "Arial"; font-size: 9pt; line-height: 18px; color: #FF6C00; text-decoration: none; font-weight: none}
+.log_06 {  font-family: "굴림", "Verdana", "Arial"; font-size: 9pt; line-height: 18px; color: #FF6C00; text-decoration: none; font-weight: bold}
+
+.log_07 {  font-family: "돋움", "Verdana", "Arial"; font-size: 9pt; line-height: 18px; color: #000000; text-decoration: none; font-weight: none; font-weight:bold}
+a.log_07:active {  font-family: "돋움", "verdana", "arial"; font-size: 9pt; line-height: 18px; color: #000000; text-decoration: none}
+a.log_07:link {  font-family: "돋움", "Verdana", "Arial"; font-size: 9pt; line-height: 18px; color: #000000; text-decoration: none}
+a.log_07:visited {  font-family: "돋움", "Verdana", "Arial"; font-size: 9pt; line-height: 18px; color: #C31F4E; text-decoration: none}
+a.log_07:hover {  font-family: "돋움", "Verdana", "Arial"; font-size: 9pt; line-height: 18px; color: #C31F4E; text-decoration: none}
+
+.cgs_input { BACKGROUND-COLOR: #FFFFFF; BORDER-BOTTOM: #7F9DB9 1px solid; BORDER-LEFT: #7F9DB9 1px solid; BORDER-RIGHT: #7F9DB9 1px solid; BORDER-TOP: #7F9DB9 1px solid;}
+.my5_input { BACKGROUND-COLOR: #FFFFFF; BORDER-BOTTOM: #999999 1px solid; BORDER-LEFT: #999999 1px solid; BORDER-RIGHT: #999999 1px solid; BORDER-TOP: #999999 1px solid;}
+.my8_input { BACKGROUND-COLOR: #EFF9FF; BORDER-BOTTOM: #44ADEC 1px solid; BORDER-LEFT: #44ADEC 1px solid; BORDER-RIGHT: #44ADEC 1px solid; BORDER-TOP: #44ADEC 1px solid;}
+.login_input {BACKGROUND-COLOR: #FFFFFF; BORDER-BOTTOM: #66A4DB 1px solid; BORDER-LEFT: #66A4DB 1px solid; BORDER-RIGHT: #66A4DB 1px solid; BORDER-TOP: #66A4DB 1px solid ; COLOR:#9CABBA}
+.login_input_black {BACKGROUND-COLOR: #FFFFFF; BORDER-BOTTOM: #66A4DB 1px solid; BORDER-LEFT: #66A4DB 1px solid; BORDER-RIGHT: #66A4DB 1px solid; BORDER-TOP: #66A4DB 1px solid ; COLOR:#000000}
+
+
+.mainGraph { color:#5A595A; font-family:  Dotum, 돋움, Tahoma, Seoul; font-size:11px; line-height : 16px;}
+
+/* placeholder 색상 */
+input:-ms-input-placeholder {
+	color: gray;
+}
+input::-ms-input-placeholder {
+	color: gray;
+}
+</STYLE>

@@ -1,0 +1,497 @@
+<!doctype html>
+<html lang="en">
+
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>VILLA SPACE</title>
+    <link rel="icon" href="{{ url_for('static', filename='img/See_villar.png') }}">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+    <!-- animate CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/animate.css') }}">
+    <!-- owl carousel CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/owl.carousel.min.css') }}">
+    <!-- themify CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/themify-icons.css') }}">
+    <!-- flaticon CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/flaticon.css') }}">
+    <!-- fontawesome CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='fontawesome/css/all.min.css') }}">
+    <!-- magnific CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/magnific-popup.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/gijgo.min.css') }}">
+    <!-- niceselect CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/nice-select.css') }}">
+    <!-- slick CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/slick.css') }}">
+    <!-- style CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='img/파비콘.png') }}" type="image/x-icon"/>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+
+<body>
+   <!--::header part start::-->
+   <header class="main_menu">
+        <div class="sub_menu">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6 col-sm-12 col-md-6"> </div>
+                    <div class="col-lg-6 col-sm-12 col-md-6">
+                        <div class="sub_menu_social_icon">
+                            <a href="#"><i class="flaticon-facebook"></i></a>
+                            <a href="#"><i class="flaticon-twitter"></i></a>
+                            <a href="#"><i class="flaticon-skype"></i></a>
+                            <a href="#"><i class="flaticon-instagram"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="main_menu_iner">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-12">
+                        <nav class="navbar navbar-expand-lg navbar-light justify-content-between">
+                            <a class="navbar-brand" href="{{ url_for('static', filename='img/villa_space.jpg') }}">
+                                <img src="{{ url_for('static', filename='img/villa_space.jpg') }}" alt="logo">
+                            </a>
+                            <button class="navbar-toggler" type="button" data-toggle="collapse"
+                                data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                                aria-expanded="false" aria-label="Toggle navigation">
+                                <span class="navbar-toggler-icon"></span>
+                            </button>
+            
+                            <div class="collapse navbar-collapse main-menu-item justify-content-center"
+                                id="navbarSupportedContent">
+                                <ul class="navbar-nav">
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="{{ url_for('index') }}">Home</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="{{ url_for('about') }}">About Us</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="{{ url_for('details') }}">Predict Price Villa</a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <a href="{{ url_for('login2') }}" class="btn_1 d-none d-lg-block rounded-pill">소셜로그인</a>
+                        </nav>
+                    </div>
+                </div>
+            </div>            
+        </div>
+    </header>
+    <!-- Header part end-->
+
+    <!-- banner part start-->
+    <section class="banner_part">
+        <div class="container">
+            <div class="row align-items-center justify-content-center">
+                <div class="col-lg-10">
+                    <div class="banner_text text-center">
+                        <div class="banner_text_iner">
+                            <h1>Villa Space</h1>
+                            <p class="shadow-lg p-3 mb-5 bg-body rounded" style="font-size: 30px;">당신이 원하는 빌라를 찾아주고, 당신의 원하는 빌라의 가격을 예측합니다.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- banner part start-->
+
+    <!-- booking part start-->
+    <section class="booking_part">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="booking_menu">
+                        <ul class="nav nav-tabs" id="myTab" role="tablist">
+                            <li class="nav-item">
+                            <p class="nav-link active font-weight-bold" id="hotel-tab" data-toggle="tab" href="#hotel" role="tab" aria-controls="hotel" aria-selected="true" style="font-size:20px;">내가 원하는 조건 입력하기</p>
+                            <!-- </li>
+                            <li class="nav-item">
+                            <a class="nav-link" id="tricket-tab" data-toggle="tab" href="#tricket" role="tab" aria-controls="tricket" aria-selected="false">tricket</a>
+                            </li>
+                            <li class="nav-item">
+                            <a class="nav-link" id="place-tab" data-toggle="tab" href="#place" role="tab" aria-controls="place" aria-selected="false">place</a>
+                            </li> -->
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-12">
+                    <div class="booking_content">
+                        <div class="tab-content" id="myTabContent">
+                            <div class="tab-pane fade show active" id="hotel" role="tabpanel" aria-labelledby="hotel-tab">
+                                <div class="booking_form">
+                                    <form action="#">
+                                        <div class="form-row" style="padding-bottom: 5px;">
+                                            <div class="form_colum">
+                                                <div class="form_column">
+                                                    <input type="text" class="nc2_select" placeholder="    법원명(ex.서울중앙지법)" id="courtnameInput">
+                                                </div>
+                                            </div>
+                                            <div class="form_column">
+                                                <input type="text" class="nc2_select" placeholder="     연도" id="yearInput">
+                                            </div>
+                                            <div class="form_column">
+                                                <input type="text" class="nc2_select" placeholder="    사건번호" id="keywordInput">
+                                            </div>
+                                            <div class="form_column">
+                                                <input type="text" class="nc2_select" placeholder="    역과의거리" id="distanceInput">
+                                            </div>
+                                            
+                                            <script>
+                                                function printText() {
+                                                    // 여기서는 마지막 입력 값만을 가져오므로, 이 부분을 수정할 수 있습니다.
+                                                    var inputElement = document.getElementById("keywordInput");
+                                                    var outputDiv = document.getElementById("outputDiv");
+                                                    var inputValue = inputElement.value;
+                                                    outputDiv.innerHTML = inputValue;
+                                                }
+                                            </script>
+                                            
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button class="btn_1 bg-body rounded border border-light btn float-right" id="submitButton">검색</button>
+                <button class="btn_1 bg-body rounded border border-light btn float-right" id="submitButton" onclick="goToResult()">결과보기</button>
+                <script>
+                    function goToResult() {
+                        window.location.href = "{{ url_for('result') }}";
+                    }
+                </script>
+                <script>
+                    $("#submitButton").click(function() {
+                        $.ajax({
+                            url: '/submit',
+                            method: 'POST',
+                            contentType: 'application/json',
+                            data: JSON.stringify({
+                                courtname_input: $("#courtnameInput").val(),
+                                input_year: $("#yearInput").val(),
+                                keyword: $("#keywordInput").val(),
+                                역과의거리: $("#distanceInput").val(),
+                            }),
+                            success: function(response) {
+                                console.log(response);
+                                // 필요한 경우, 사용자에게 응답 처리
+                            },
+                            error: function(error) {
+                                console.log(error);
+                            }
+                        });
+                    });
+                </script>
+                <script>
+                    function printText() {
+                        var inputElement = document.getElementById("inputText");
+                        var inputValue = inputElement.value;
+                        localStorage.setItem("textValue", inputValue); // 로컬 스토리지에 텍스트 저장
+                        location.href = 'result.html'; // result.html 페이지로 이동
+                    }
+                </script>
+            
+            </div>
+        </div>
+    </section>
+    <!-- Header part end-->
+
+    <!--top place start-->
+    <section class="top_place section_padding">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-xl-6">
+                    <div class="section_tittle text-center">
+                        <h2>Most viewed villa items</h2>
+                        <p>많은 사람들에게 있기 있는 서울 빌라를 소개합니다.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-6 col-md-6">
+                    <div class="single_place">
+                        <img src="{{ url_for('static', filename='img/modern.png') }}" alt="">
+                        <div class="hover_Text d-flex align-items-end justify-content-between">
+                            <div class="hover_text_iner">
+                                <a href="#" class="place_btn">역삼동</a>
+                                <h3>모던클레식하우스</h3>
+                                <p>서울 강남구 역삼동 796-15 2층204호</p>
+                                <div class="place_review">
+                                    <span>(210 review)</span>
+                                </div>
+                            </div>
+                            <div class="details_icon text-right">
+                                <i class="ti-share"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6">
+                    <div class="single_place">
+                        <img src="{{ url_for('static', filename='img/hund.png') }}" alt="">
+                        <div class="hover_Text d-flex align-items-end justify-content-between">
+                            <div class="hover_text_iner">
+                                <a href="#" class="place_btn">정릉동</a>
+                                <h3>현대하이츠빌라</h3>
+                                <p>서울특별시 성북구 정릉동 508-165</p>
+                                <div class="place_review">
+                                    <a href="#"><i class="fas fa-star"></i></a>
+                                    <a href="#"><i class="fas fa-star"></i></a>
+                                    <a href="#"><i class="fas fa-star"></i></a>
+                                    <a href="#"><i class="fas fa-star"></i></a>
+                                    <a href="#"><i class="fas fa-star"></i></a>
+                                    <span>(190 review)</span>
+                                </div>
+                            </div>
+                            <div class="details_icon text-right">
+                                <i class="ti-share"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6">
+                    <div class="single_place">
+                        <img src="{{ url_for('static', filename='img/dream.png') }}" alt="">
+                        <div class="hover_Text d-flex align-items-end justify-content-between">
+                            <div class="hover_text_iner">
+                                <a href="#" class="place_btn">수유동</a>
+                                <h3>드림빌리지</h3>
+                                <p>서울특별시 강북구 수유동 468-231</p>
+                                <div class="place_review">
+                                    <a href="#"><i class="fas fa-star"></i></a>
+                                    <a href="#"><i class="fas fa-star"></i></a>
+                                    <a href="#"><i class="fas fa-star"></i></a>
+                                    <a href="#"><i class="fas fa-star"></i></a>
+                                    <a href="#"><i class="fas fa-star"></i></a>
+                                    <span>(168 review)</span>
+                                </div>
+                            </div>
+                            <div class="details_icon text-right">
+                                <i class="ti-share"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6">
+                    <div class="single_place">
+                        <img src="{{ url_for('static', filename='img/song.png') }}" alt="">
+                        <div class="hover_Text d-flex align-items-end justify-content-between">
+                            <div class="hover_text_iner">
+                                <a href="#" class="place_btn">미아동</a>
+                                <h3>성훈팰리스</h3>
+                                <p>서울특별시 강북구 미아동 324-108</p>
+                                <div class="place_review">
+                                    <a href="#"><i class="fas fa-star"></i></a>
+                                    <a href="#"><i class="fas fa-star"></i></a>
+                                    <a href="#"><i class="fas fa-star"></i></a>
+                                    <a href="#"><i class="fas fa-star"></i></a>
+                                    <a href="#"><i class="fas fa-star"></i></a>
+                                    <span>(146 review)</span>
+                                </div>
+                            </div>
+                            <div class="details_icon text-right">
+                                <i class="ti-share"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <a href="#" class="btn_1 text-center rounded-pill">빌라 더보기</a>
+            </div>            
+        </div>
+    </section>
+    <!--top place end-->
+
+    <!--top place start-->
+    <section class="event_part section_padding">
+
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="event_slider owl-carousel" >
+                        <div class="single_event_slider">
+                            <div class="row justify-content-end">
+                                <div class="col-lg-6 col-md-6">
+                                    <div class="event_slider_content">
+                                        <h5>최근 빌라 가격 예측</h5>
+                                        <h2>상봉팰리스 제6층</h2>
+                                        <p>서울특별시 중랑구 상봉동 87-7
+                                        </p>
+                                        <p>용도: <span>빌라(업무)</span> </p>
+                                        <p>전용면적: <span>8.96평</span> </p>
+                                        <p>예상낙찰가: <span>250,000,000</span> </p>
+                                        <div class="rating">
+                                            <span>예상 정확도</span>
+                                            <div class="place_review">
+                                                <a href="#"><i class="fas fa-star"></i></a>
+                                                <a href="#"><i class="fas fa-star"></i></a>
+                                                <a href="#"><i class="fas fa-star"></i></a>
+                                                <a href="#"><i class="fas fa-star"></i></a>
+                                                <a href="#"><i class="fas fa-star"></i></a>
+                                            </div>
+                                        </div>
+                                        <a href="#" class="btn_1">자세히 보기</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="single_event_slider">
+                            <div class="row justify-content-end">
+                                <div class="ol-lg-6 col-md-6">
+                                    <div class="event_slider_content">
+                                        <h5>최근 빌라 가격 예측</h5>
+                                        <h2>우공리온빌</h2>
+                                        <p>서울특별시 노원구 공릉동 371-3외 1필지
+                                        </p>
+                                        <p>용도: <span>다세대(빌라)</span> </p>
+                                        <p>전용면적: <span>9.88평</span> </p>
+                                        <p>예상가격: <span> 400,000,000</span> </p>
+                                        <div class="rating">
+                                            <span>예상정확도:</span>
+                                            <div class="place_review">
+                                                <a href="#"><i class="fas fa-star"></i></a>
+                                                <a href="#"><i class="fas fa-star"></i></a>
+                                                <a href="#"><i class="fas fa-star"></i></a>
+                                                <a href="#"><i class="fas fa-star"></i></a>
+                                            </div>
+                                        </div>
+                                        <a href="#" class="btn_1">자세히 보기</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="single_event_slider">
+                            <div class="row justify-content-end">
+                                <div class="ol-lg-6 col-md-6">
+                                    <div class="event_slider_content">
+                                        <h5>최근 빌라 가격 예측</h5>
+                                        <h2>에스엠파크</h2>
+                                        <p> 서울특별시 성북구 길음동 1215
+                                        </p>
+                                        <p>용도: <span>다세대(빌라)</span> </p>
+                                        <p>전용면적: <span>8.82평</span> </p>
+                                        <p>예상가격: <span>270,000,000</span> </p>
+                                        <div class="rating">
+                                            <span>예상정확도:</span>
+                                            <div class="place_review">
+                                                <a href="#"><i class="fas fa-star"></i></a>
+                                                <a href="#"><i class="fas fa-star"></i></a>
+                                                <a href="#"><i class="fas fa-star"></i></a>
+                                                <a href="#"><i class="fas fa-star"></i></a>
+                                                <a href="#"><i class="fas fa-star"></i></a>
+                                            </div>
+                                        </div>
+                                        <a href="#" class="btn_1">자세히 보기</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--top place end-->
+
+
+
+    <!--top place start-->
+    <!--top place end-->
+
+    <!--::industries start::-->
+    <!-- <section class="best_services section_padding">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-xl-6">
+                    <div class="section_tittle text-center">
+                        <h2>We offered best services</h2>
+                        <p>Waters make fish every without firmament saw had. Morning air subdue. Our. Air very one. Whales grass is fish whales winged.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-3 col-sm-6">
+                    <div class="single_ihotel_list">
+                        <img src="img/services_1.png" alt="">
+                        <h3> <a href="#"> Transportation</a></h3>
+                        <p>All transportation cost we bear</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-sm-6">
+                    <div class="single_ihotel_list">
+                        <img src="img/services_2.png" alt="">
+                        <h3> <a href="#"> Guidence</a></h3>
+                        <p>We offer the best guidence for you</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-sm-6">
+                    <div class="single_ihotel_list">
+                        <img src="img/services_3.png" alt="">
+                        <h3> <a href="#"> Accomodation</a></h3>
+                        <p>Luxarious and comfortable</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-sm-6">
+                    <div class="single_ihotel_list">
+                        <img src="img/services_4.png" alt="">
+                        <h3> <a href="#"> Discover world</a></h3>
+                        <p>Best tour plan for your next tour</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section> -->
+    <!--::industries end::-->
+
+    <!-- footer part start-->
+
+        <div class="container-fluid">
+            <div class="row justify-content-center">
+                <div class="col-lg-12">
+                    <div class="copyright_part_text text-center">
+                        <p class="footer-text m-0"><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+<!-- Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="ti-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a> -->
+<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- footer part end-->
+
+        <!-- jquery plugins here-->
+    <script src="{{ url_for('static', filename='js/jquery-1.12.1.min.js') }}"></script>
+    <!-- popper js -->
+    <script src="{{ url_for('static', filename='js/popper.min.js') }}"></script>
+    <!-- bootstrap js -->
+    <script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
+    <!-- magnific js -->
+    <script src="{{ url_for('static', filename='js/jquery.magnific-popup.js') }}"></script>
+    <!-- swiper js -->
+    <script src="{{ url_for('static', filename='js/owl.carousel.min.js') }}"></script>
+    <!-- masonry js -->
+    <script src="{{ url_for('static', filename='js/masonry.pkgd.js') }}"></script>
+    <!-- masonry js -->
+    <script src="{{ url_for('static', filename='js/jquery.nice-select.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/gijgo.min.js') }}"></script>
+    <!-- contact js -->
+    <script src="{{ url_for('static', filename='js/jquery.ajaxchimp.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/jquery.form.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/jquery.validate.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/mail-script.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/contact.js') }}"></script>
+    <!-- custom js -->
+    <script src="{{ url_for('static', filename='js/custom.js') }}"></script>
+
+</body>
+
+</html>

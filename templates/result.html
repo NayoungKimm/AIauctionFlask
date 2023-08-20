@@ -1,0 +1,230 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Home</title>
+    <link rel="icon" href="{{ url_for('static', filename='img/') }}">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+    <!-- animate CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/animate.css') }}">
+    <!-- owl carousel CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/owl.carousel.min.css') }}">
+    <!-- themify CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/themify-icons.css') }}">
+    <!-- flaticon CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/flaticon.css') }}">
+    <!-- fontawesome CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='fontawesome/css/all.min.css') }}">
+    <!-- magnific CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/magnific-popup.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/gijgo.min.css') }}">
+    <!-- niceselect CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/nice-select.css') }}">
+    <!-- slick CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/slick.css') }}">
+    <!-- style CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='img/파비콘.png') }}" type="image/x-icon"/>
+
+</head>
+
+<body>
+    <!--::header part start::-->
+    <header class="main_menu">
+        <div class="sub_menu">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6 col-sm-12 col-md-6"> </div>
+                    <div class="col-lg-6 col-sm-12 col-md-6">
+                        <div class="sub_menu_social_icon">
+                            <a href="#"><i class="flaticon-facebook"></i></a>
+                            <a href="#"><i class="flaticon-twitter"></i></a>
+                            <a href="#"><i class="flaticon-skype"></i></a>
+                            <a href="#"><i class="flaticon-instagram"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="main_menu_iner">
+            <div class="container">
+                <div class="row align-items-center ">
+                    <div class="col-lg-12">
+                        <nav class="navbar navbar-expand-lg navbar-light justify-content-between">
+                            <a class="navbar-brand" href="{{ url_for('index') }}"> <img src="{{ url_for('static', filename='img/villa_space.jpg') }}" alt="logo"> </a>
+                            <button class="navbar-toggler" type="button" data-toggle="collapse"
+                                data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                                aria-expanded="false" aria-label="Toggle navigation">
+                                <span class="navbar-toggler-icon"></span>
+                            </button>
+                        
+                            <div class="collapse navbar-collapse main-menu-item justify-content-center"
+                                id="navbarSupportedContent">
+                                <ul class="navbar-nav">
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="{{ url_for('index') }}">Home</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="{{ url_for('about') }}">About Us</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="{{ url_for('details') }}">Predict Price Villa</a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <a href="#" class="btn_1 d-none d-lg-block rounded-pill">로그인/회원가입</a>
+                        </nav>                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+        <!-- Header part end-->
+
+    <!-- breadcrumb start-->
+    <section class="breadcrumb breadcrumb2_bg">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="breadcrumb_iner">
+                        <div class="breadcrumb_iner_item text-center">
+                            <h2>가격 예측을 완료했습니다</h2>
+                            <p>We have completed the price prediction</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+    <!--::industries start::-->
+    <section class="best_services section_padding">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-xl-6">
+                    <div class="section_tittle text-center">
+                        <h2>빌라값 분석을 완료.</h2>
+                        <p>Villa Space의 예측된 빌라의 낙찰가입니다.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="sec11">
+                <img src="img/11.png" class="sec12" alt=""><br>
+                <h3><div id="outputDiv"></div></h3>
+    
+                <script>         
+                    var inputInfo = document.getElementById("inputInfo");
+                    inputInfo.innerHTML = "<strong>Input Year:</strong> {{ user.input_year }} - <strong>Keyword:</strong> {{ user.keyword }}";
+                </script>
+
+                <p><strong>Input Year:</strong> {{ user.input_year }} - {{ user.keyword }}</p>
+                <p style="font-size: larger; font-weight: bold; color: gray; text-align: center;"><strong>Weighted Final Price:</strong> {{ user.weighted_final_price }}</p>
+
+                <button class="btn_1 bg-body rounded border border-light btn float-right" onclick="goToResult()">다시 검색하기</button>
+                <script>
+                    function goToResult() {
+                        window.location.href = "{{ url_for('details') }}";
+                    }
+                </script>
+            </div>
+
+        </div>
+    </section>
+    <!--::industries end::-->
+
+    <!--top place start-->
+    <section class="client_review section_padding">
+        <div class="container">
+            <div class="row ">
+                <div class="col-xl-6">
+                    <div class="section_tittle">
+                        <h2>인근 매몰 검색</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="client_review_slider owl-carousel">
+                        <div class="single_review_slider">
+                            <img src="{{ url_for('static', filename='img/11.png') }}" alt="">
+                            <p>서울특별시 서대문구 홍은동 265-221 제1층 제102호</p>
+                            <h5>100,800,000원</h5>
+                        </div>
+                        <div class="single_review_slider">
+                            <img src="{{ url_for('static', filename='img/12.png') }}" alt="">
+                            <p>서울특별시 서대문구 홍은동 408-15 4층403호 (홍은동,위일리츠빌) </p>
+                            <h5>11,038,000원</h5>
+                        </div>
+                        <div class="single_review_slider">
+                            <img src="{{ url_for('static', filename='img/13.png') }}" alt="">
+                            <p>서울특별시 서대문구 홍은동 188-29 삼성빌라 나동 1층105호 </p>
+                            <h5>292,120,000원</h5>
+                        </div>
+                        <div class="single_review_slider">
+                            <img src="{{ url_for('static', filename='img/15.png') }}" alt="">
+                            <p>서울특별시 서대문구 홍은동 265-123 나은빌라 D동 제지하층 제비03호</p>
+                            <h5>53,333,300원</h5>
+                        </div>
+                        <div class="single_review_slider">
+                            <img src="{{ url_for('static', filename='img/16.jpg') }}" alt="">
+                            <p> 서울특별시 서대문구 홍은동 458 금송힐스빌 제103동 제2층 제203호 </p>
+                            <h5>254,720,000원</h5>
+                        </div>
+                    </div>                    
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--top place end-->
+
+    <!--::gallery part end::-->
+
+    <!-- footer part start-->
+    <footer class="footer-area">
+        <div class="container-fluid">
+            <div class="row justify-content-center">
+                <div class="col-lg-12">
+                        <p class="footer-text m-0"><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+<!-- Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="ti-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a> -->
+<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- footer part end-->
+
+    <!-- jquery plugins here-->
+    <script src="{{ url_for('static', filename='js/jquery-1.12.1.min.js') }}"></script>
+    <!-- popper js -->
+    <script src="{{ url_for('static', filename='js/popper.min.js') }}"></script>
+    <!-- bootstrap js -->
+    <script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
+    <!-- magnific js -->
+    <script src="{{ url_for('static', filename='js/jquery.magnific-popup.js') }}"></script>
+    <!-- swiper js -->
+    <script src="{{ url_for('static', filename='js/owl.carousel.min.js') }}"></script>
+    <!-- masonry js -->
+    <script src="{{ url_for('static', filename='js/masonry.pkgd.min.js') }}"></script>
+    <!-- masonry js -->
+    <script src="{{ url_for('static', filename='js/jquery.nice-select.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/gijgo.min.js') }}"></script>
+    <!-- contact js -->
+    <script src="{{ url_for('static', filename='js/jquery.ajaxchimp.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/jquery.form.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/jquery.validate.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/mail-script.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/contact.js') }}"></script> 
+    <!-- custom js -->
+    <script src="{{ url_for('static', filename='js/custom.js') }}"></script>
+
+</body>
+
+</html>

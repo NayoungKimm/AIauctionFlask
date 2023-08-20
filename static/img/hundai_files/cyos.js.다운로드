@@ -1,0 +1,1735 @@
+/**************************************************************************
+플래시방지
+**************************************************************************/
+String.prototype.trim = function() { 
+	 return this.replace(/(^\s*)|(\s*$)/gi, "");   
+} 
+String.prototype.replaceAll = function(str1, str2) {   
+	 var temp_str = "";   
+	 if(this.trim() != "" && str1 != str2) {   
+			 temp_str = this.trim();   
+			 while (temp_str.indexOf(str1) > -1){   
+					 temp_str = temp_str.replace(str1, str2);   
+			 }   
+	 }   
+	 return temp_str;   
+} 
+
+
+function ws(id)
+{
+	document.write(id.text); id.id="";
+}
+function copyno()
+{
+	var omitformtags=["input", "textarea", "select"]
+/*
+	omitformtags=omitformtags.join("|")
+
+	function disableselect(e){
+	if (omitformtags.indexOf(e.target.tagName.toLowerCase())==-1)
+	return false
+	}
+
+	function reEnable(){
+	return true
+	}
+
+	if (typeof document.onselectstart!="undefined")
+	document.onselectstart=new Function ("return false")
+	else{
+	document.onmousedown=disableselect
+	document.onmouseup=reEnable
+	}
+	var message="오른쪽 마우스는 사용하실수 없습니다."; // 경고 메세지를 넣으려면 여기에 입력합니다
+	function clickIE() {if (document.all) {(message);return false;}}
+	function clickNS(e) {if
+	(document.layers||(document.getElementById&&!document.all)) {
+	if (e.which==2||e.which==3) {(message);return false;}}}
+	if (document.layers)
+	{document.captureEvents(Event.MOUSEDOWN);document.onmousedown=clickNS;}
+	else{document.onmouseup=clickNS;document.oncontextmenu=clickIE;}
+
+	document.oncontextmenu=new Function("return false")
+*/
+}
+/**************************************************************************
+사진등록시 미리보기 ioda 추천업체 등록시 사용
+<img id=imgPreview1 src='<?php echo $picture1; ?>' onError="this.src='/new/img/a10.gif';">
+<input name="recomm_img1" type="file" onChange="previewImage(this, 'imgPreview1');">
+**************************************************************************/
+function previewImage(obj_id, img_id)
+{
+  document.getElementById(img_id).src = "file://" + obj_id.value;
+}
+
+/**************************************************************************
+아이디중복체크 idoa 사용
+**************************************************************************/
+function check_com_code()
+{
+	window.open('/cyosForm/id_check2_form.php','check','width=250,height=200,center');
+}
+
+/**************************************************************************
+새창띄우기
+**************************************************************************/
+function NewWindow(mypage,myname,w,h,scroll,pos)
+{
+	var settings='width='+w+',height='+h+',top=0,left=0,scrollbars='+scroll+',location=no,directories=no,status=no,menubar=no,toolbar=no,resizable=yes';
+	var owin = window.open(mypage,myname,settings);
+	try{
+		owin.focus();
+	}catch(e){}
+}
+
+function AdminWindow(mypage,myname,w,h,scroll,pos)
+{
+	window.open(mypage,'adminpage','toolbar=yes,location=no,directories=no,status=yes,menubar=no,scrollbars=yes,resizable=yes');
+}
+
+function notice_getCookie( name )
+{
+        var nameOfCookie = name + "=";
+        var x = 0;
+        while ( x <= document.cookie.length )
+        {
+                var y = (x+nameOfCookie.length);
+                if ( document.cookie.substring( x, y ) == nameOfCookie ) {
+                        if ( (endOfCookie=document.cookie.indexOf( ";", y )) == -1 )
+                                endOfCookie = document.cookie.length;
+                        return unescape( document.cookie.substring( y, endOfCookie ) );
+                }
+                x = document.cookie.indexOf( " ", x ) + 1;
+                if ( x == 0 )
+                        break;
+        }
+        return "";
+}
+
+/**************************************************************************
+confirm
+**************************************************************************/
+function re()
+{
+	a = confirm('다시 작성하시겠습니까?')	;
+	if(a) document.join.reset();
+}
+/**************************************************************************
+공백제거
+**************************************************************************/
+function trim(strSource)
+{
+ re = /^\s+|\s+$/g;
+ return strSource.replace(re, '');
+}
+/**************************************************************************
+숫자만 입력
+**************************************************************************/
+function validate(field)
+{
+	field.value = trim(field.value);
+	var valid = "0123456789"
+	var ok = "yes";
+	var temp;
+	for (var i=0; i<field.value.length; i++)
+	{
+		temp = "" + field.value.substring(i, i+1);
+		if (valid.indexOf(temp) == "-1") ok = "no";
+	}
+	if (ok == "no")
+	{
+		alert("숫자만 입력할 수 있습니다");
+		field.focus();
+		field.select();
+		return false;
+   }
+   return true;
+}
+function onlyInputNum(obj){
+	val=obj.value;
+	re=/[^0-9]/gi;
+	obj.value=val.replace(re,"");
+}
+
+/**************************************************************************
+공백제거
+**************************************************************************/
+function del_blank(str)
+{
+	for(; str.indexOf(" ") != -1 ;)
+  {
+  	str = str.replace(" ","")
+  }
+  return str;
+}
+
+/**************************************************************************
+아이디/비밀번호 저장
+**************************************************************************/
+function input_alert_idsave()
+{
+	//if(document.login.idsave.checked == true) alert("개인 컴퓨터가 아닐경우 체크시 타인에게 정보가 공개될 수 있습니다.\n\n30일동안 자동 저장됩니다.");
+	//else alert("저장된 정보를 지우겠습니다");
+}
+
+function input_alert_pwsave()
+{
+	if(document.login.pwsave.checked == true) alert("개인 컴퓨터가 아닐경우 체크시 타인에게 정보가 공개될 수 있습니다.\n\n30일동안 자동 저장됩니다.");
+	else alert("저장된 정보를 지우겠습니다");
+}
+
+function setCookie(name, value, expiredays)
+{
+	var todayDate = new Date();
+  todayDate.setDate( todayDate.getDate() + expiredays );
+  document.cookie = name + "=" + escape( value ) + "; path=/; expires=" + todayDate.toGMTString() + ";"
+  return;
+}
+
+function delCookie(name)
+{
+	var now = new Date();
+  document.cookie = name + "=;exprires=" + now + ";path=/";
+  return;
+}
+
+function getCookie(name)
+{
+	var nameOfCookie = name + "=";
+  var x = 0
+  while ( x <= document.cookie.length )
+  {
+  	var y = (x+nameOfCookie.length);
+    if ( document.cookie.substring( x, y ) == nameOfCookie )
+    {
+    	if ( (endOfCookie=document.cookie.indexOf( ";",y )) == -1 )
+      endOfCookie = document.cookie.length;
+      return unescape( document.cookie.substring(y, endOfCookie ) );
+    }
+    x = document.cookie.indexOf( " ", x ) + 1;
+    if ( x == 0 )
+    break;
+ }
+ return "";
+}
+/**************************************************************************
+이미지맞게 팝업띄우기
+**************************************************************************/
+function AutoResize(img){
+  foto1= new Image();
+  foto1.src=(img);
+  Controlla(img);
+}
+function Controlla(img){
+  if((foto1.width!=0)&&(foto1.height!=0)){
+    viewFoto(img);
+  }
+  else{
+    funzione="Controlla('"+img+"')";
+    intervallo=setTimeout(funzione,20);
+  }
+}
+function viewFoto(img){
+  largh=foto1.width+20;
+  altez=foto1.height+20;
+  stringa="width="+largh+",height="+altez;
+  finestra=window.open(img,"",stringa);
+}
+
+/**************************************************************************
+글자수 제한_zip8245.co.kr에서 사용
+사용법
+<textarea name="contents" cols="82" rows="10" onkeyup="chkChr(200, this);"></textarea>
+* 200글자까지 가능합니다. (현재 글자수 : <span id="totalNum">0</span>자)
+**************************************************************************/
+function chkChr(FieldName, FieldName1, FieldName2){
+	var totalCount = 0;
+	var totalCount2 = 0;
+
+	var strCount = 0;
+	var strCount2 = 0;
+	var tempStr, tempStr2;
+
+	var chr = FieldName1.value
+	var chr2;
+	if (FieldName1 == document.__daumform.title)
+		chr2 = document.__daumform.description.value;
+	else
+		chr2 = document.__daumform.title.value;
+
+	strCount2 += chr2.length;
+	strCount2 += chr.length;
+
+	if (strCount2 > FieldName) {
+		alert("최대 " + FieldName + "자까지 가능합니다.");
+		strCount = 0;
+		strCount2 = 0;
+		tempStr2 = "";
+		strCount2 += chr2.length;
+
+		for(i = 0; i < chr.length; i++)
+		{
+			tempStr = chr.charAt(i);
+			strCount2 += 1;
+	      	if (strCount2 > FieldName)
+	      	{
+	      		if (escape(tempStr).length > 4) strCount -= 2;
+	      		else strCount -= 1 ;
+				strCount2 -= 1;
+	      		break;
+	      	}
+	      	else tempStr2 += tempStr;
+	    }
+		FieldName1.value = tempStr2;
+	}
+
+	eval("totalNum.innerHTML='"+strCount2+"'");
+}
+
+// 커서를 자동으로 넘김.
+var isNN = (navigator.appName.indexOf("Netscape")!=-1);
+
+function autoTab(input,len, e) {
+var keyCode = (isNN) ? e.which : e.keyCode;
+var filter = (isNN) ? [0,8,9] : [0,8,9,16,17,18,37,38,39,40,46];
+if(input.value.length >= len && !containsElement(filter,keyCode)) {
+input.value = input.value.slice(0, len);
+input.form[(getIndex(input)+1) % input.form.length].focus();
+}
+function containsElement(arr, ele) {
+var found = false, index = 0;
+while(!found && index < arr.length)
+if(arr[index] == ele)
+found = true;
+else
+index++;
+return found;
+}
+function getIndex(input) {
+var index = -1, i = 0, found = false;
+while (i < input.form.length && index == -1)
+if (input.form[i] == input)index = i;
+else i++;
+return index;
+}
+return true;
+}
+
+function commaSplit_new(srcNumber) {
+var txtNumber = '' + srcNumber;
+if (isNaN(txtNumber) || txtNumber == "") {
+alert("숫자만 입력 하세요");
+fieldName.select();
+fieldName.focus();
+}
+else {
+var rxSplit = new RegExp('([0-9])([0-9][0-9][0-9][,.])');
+var arrNumber = txtNumber.split('.');
+arrNumber[0] += '.';
+do {
+arrNumber[0] = arrNumber[0].replace(rxSplit, '$1,$2');
+} while (rxSplit.test(arrNumber[0]));
+if (arrNumber.length > 1) {
+return arrNumber.join('');
+}
+else {
+return arrNumber[0].split('.')[0];
+      }
+   }
+}
+
+//콤마제거
+function commaremove(str)
+{
+	re = /^$|,/g;
+	// "$" and "," 입력 제거
+	return str.replace(re, "");
+}
+//콤마추가
+function commaradd(srcNumber)
+{
+	var txtNumber = '' + srcNumber;
+	if (isNaN(txtNumber) || txtNumber == "")
+	{
+		//alert("숫자만 입력 하세요");
+		fieldName.select();
+		fieldName.focus();
+	}
+	else
+	{
+		var rxSplit = new RegExp('([0-9])([0-9][0-9][0-9][,.])');
+		var arrNumber = txtNumber.split('.');
+		arrNumber[0] += '.';
+		do
+		{
+			arrNumber[0] = arrNumber[0].replace(rxSplit, '$1,$2');
+		}
+		while (rxSplit.test(arrNumber[0]));
+		if (arrNumber.length > 1)
+		{
+			return arrNumber.join('');
+		}
+		else
+		{
+			return arrNumber[0].split('.')[0];
+	  }
+  }
+}
+
+//즐겨찾기
+function addbookmark(addurl,addtext)
+{
+	bookmarkurl = addurl; // 즐겨찾기에 추가할 곳 의 URL
+	bookmarktitle = addtext // 사이트명
+	if (document.all)
+	window.external.AddFavorite(bookmarkurl,bookmarktitle)
+}
+
+//'로딩중' 메세지를
+function loadImages()
+{
+	if (document.getElementById)
+	{
+		document.getElementById('hidepage').style.visibility = 'hidden';
+	}
+	else
+	{
+		if (document.layers)
+		{
+			document.hidepage.visibility = 'hidden';
+		}
+		else
+		{
+			document.all.hidepage.style.visibility = 'hidden';
+    }
+  }
+}
+//더 간단하게 상태바 링크주소 숨기기
+function hidestatus()
+{
+	window.status='스피드옥션은 회원님의 수익창출을 위해 최선의 노력을 다하겠습니다. - 스피드옥션 임직원 일동 -'
+	return true;
+}
+
+function Round(Num, Position , Base)
+{
+	//Num = 반올림할 수
+	//Position = 반올림할 자릿수(정수로만)
+	//Base = i 이면 소숫점위의 자릿수에서, f 이면 소숫점아래의 자릿수에서 반올림
+
+	if(Position == 0)
+	{
+		//1이면 소숫점1 자리에서 반올림
+		return Math.round(Num);
+	}
+	else if(Position > 0)
+	{
+  	var cipher = '1';
+    for(var i=0; i < Position; i++ )
+    cipher = cipher + '0';
+
+    var no = Number(cipher);
+
+    if(Base=="F")
+    {
+    	//소숫점아래에서 반올림
+      return Math.round(Num * no) / no;
+    }
+    else
+    {
+    	//소숫점위에서 반올림.
+      return Math.round(Num / no) * no;
+    }
+	}
+	else
+	{
+  	alert("자릿수는 정수로만 구분합니다.");
+    return false;
+	}
+}
+/**************************************************************************
+법원선택
+**************************************************************************/
+function set_court(main_courtno)
+{
+	//법원
+	document.info.courtNo_sub.options[9] = null;
+	document.info.courtNo_sub.options[8] = null;
+	document.info.courtNo_sub.options[7] = null;
+	document.info.courtNo_sub.options[6] = null;
+	document.info.courtNo_sub.options[5] = null;
+	document.info.courtNo_sub.options[4] = null;
+	document.info.courtNo_sub.options[3] = null;
+	document.info.courtNo_sub.options[2] = null;
+	document.info.courtNo_sub.options[1] = null;
+	document.info.courtNo_sub.options[0] = null;
+	switch(main_courtno)
+	{
+		case "0" : //본원전체
+		var item = new Option('지원전체');
+		document.info.courtNo_sub.options[0] = item;
+		document.info.courtNo_sub.options[0].value=99;
+		document.info.courtNo_sub.options[0].text='지원전체';
+		break;
+
+		case "A00" : //서울지법전체
+		var item = new Option('전체');
+		document.info.courtNo_sub.options[0] = item;
+		document.info.courtNo_sub.options[0].value=99;
+		document.info.courtNo_sub.options[0].text='전체';
+		break;
+
+		case "A01" : //서울중앙
+		var item = new Option('전체');
+		document.info.courtNo_sub.options[0] = item;
+		document.info.courtNo_sub.options[0].value=99;
+		document.info.courtNo_sub.options[0].text='전체';
+		break;
+
+		case "A02" : //서울동부
+		var item = new Option('전체');
+		document.info.courtNo_sub.options[0] = item;
+		document.info.courtNo_sub.options[0].value=99;
+		document.info.courtNo_sub.options[0].text='전체';
+		break;
+
+		case "A03" : //서울서부
+		var item = new Option('전체');
+		document.info.courtNo_sub.options[0] = item;
+		document.info.courtNo_sub.options[0].value=99;
+		document.info.courtNo_sub.options[0].text='전체';
+		break;
+
+		case "A04" : //서울남부
+		var item = new Option('전체');
+		document.info.courtNo_sub.options[0] = item;
+		document.info.courtNo_sub.options[0].value=99;
+		document.info.courtNo_sub.options[0].text='전체';
+		break;
+
+		case "A05" : //서울북부
+		var item = new Option('전체');
+		document.info.courtNo_sub.options[0] = item;
+		document.info.courtNo_sub.options[0].value=99;
+		document.info.courtNo_sub.options[0].text='전체';
+		break;
+
+		case "N01" : //울산
+		var item = new Option('전체');
+		document.info.courtNo_sub.options[0] = item;
+		document.info.courtNo_sub.options[0].value=99;
+		document.info.courtNo_sub.options[0].text='전체';
+		break;
+
+		case "M01" : //제주
+		var item = new Option('전체');
+		document.info.courtNo_sub.options[0] = item;
+		document.info.courtNo_sub.options[0].value=99;
+		document.info.courtNo_sub.options[0].text='전체';
+		break;
+
+		case "C01" : //인천
+		var item = new Option('전체');
+		document.info.courtNo_sub.options[0] = item;
+		document.info.courtNo_sub.options[0].value=99;
+		document.info.courtNo_sub.options[0].text='전체';
+		var item = new Option('본원');
+		document.info.courtNo_sub.options[1] = item;
+		document.info.courtNo_sub.options[1].value='C01';
+		document.info.courtNo_sub.options[1].text='본원';
+		var item = new Option('부천');
+		document.info.courtNo_sub.options[2] = item;
+		document.info.courtNo_sub.options[2].value='C02';
+		document.info.courtNo_sub.options[2].text='부천';
+		break;
+
+		case "E01" : //수원
+		var item = new Option('전체');
+		document.info.courtNo_sub.options[0] = item;
+		document.info.courtNo_sub.options[0].value=99;
+		document.info.courtNo_sub.options[0].text='전체';
+		var item = new Option('본원');
+		document.info.courtNo_sub.options[1] = item;
+		document.info.courtNo_sub.options[1].value='E01';
+		document.info.courtNo_sub.options[1].text='본원';
+		var item = new Option('성남');
+		document.info.courtNo_sub.options[2] = item;
+		document.info.courtNo_sub.options[2].value='E02';
+		document.info.courtNo_sub.options[2].text='성남';
+		var item = new Option('여주');
+		document.info.courtNo_sub.options[3] = item;
+		document.info.courtNo_sub.options[3].value='E03';
+		document.info.courtNo_sub.options[3].text='여주';
+		var item = new Option('평택');
+		document.info.courtNo_sub.options[4] = item;
+		document.info.courtNo_sub.options[4].value='E04';
+		document.info.courtNo_sub.options[4].text='평택';
+		var item = new Option('안산');
+		document.info.courtNo_sub.options[5] = item;
+		document.info.courtNo_sub.options[5].value='E05';
+		document.info.courtNo_sub.options[5].text='안산';
+		var item = new Option('안양');
+		document.info.courtNo_sub.options[6] = item;
+		document.info.courtNo_sub.options[6].value='E06';
+		document.info.courtNo_sub.options[6].text='안양';
+		break;
+
+		case "D01" : //의정부
+		var item = new Option('전체');
+		document.info.courtNo_sub.options[0] = item;
+		document.info.courtNo_sub.options[0].value=99;
+		document.info.courtNo_sub.options[0].text='전체';
+		var item = new Option('본원');
+		document.info.courtNo_sub.options[1] = item;
+		document.info.courtNo_sub.options[1].value='D01';
+		document.info.courtNo_sub.options[1].text='본원';
+		var item = new Option('고양');
+		document.info.courtNo_sub.options[2] = item;
+		document.info.courtNo_sub.options[2].value='D02';
+		document.info.courtNo_sub.options[2].text='고양';
+		var item = new Option('남양주');
+		document.info.courtNo_sub.options[3] = item;
+		document.info.courtNo_sub.options[3].value='D03';
+		document.info.courtNo_sub.options[3].text='남양주';
+		break;
+
+		case "B01" : //부산
+		var item = new Option('전체');
+		document.info.courtNo_sub.options[0] = item;
+		document.info.courtNo_sub.options[0].value=99;
+		document.info.courtNo_sub.options[0].text='전체';
+		var item = new Option('본원');
+		document.info.courtNo_sub.options[1] = item;
+		document.info.courtNo_sub.options[1].value='B01';
+		document.info.courtNo_sub.options[1].text='본원';
+		var item = new Option('동부');
+		document.info.courtNo_sub.options[2] = item;
+		document.info.courtNo_sub.options[2].value='B02';
+		document.info.courtNo_sub.options[2].text='동부';
+		var item = new Option('서부');
+		document.info.courtNo_sub.options[3] = item;
+		document.info.courtNo_sub.options[3].value='B03';
+		document.info.courtNo_sub.options[3].text='서부';
+		break;
+
+		case "J01" : //창원
+		var item = new Option('전체');
+		document.info.courtNo_sub.options[0] = item;
+		document.info.courtNo_sub.options[0].value=99;
+		document.info.courtNo_sub.options[0].text='전체';
+		var item = new Option('본원');
+		document.info.courtNo_sub.options[1] = item;
+		document.info.courtNo_sub.options[1].value='J01';
+		document.info.courtNo_sub.options[1].text='본원';
+		var item = new Option('마산');
+		document.info.courtNo_sub.options[2] = item;
+		document.info.courtNo_sub.options[2].value='J06';
+		document.info.courtNo_sub.options[2].text='마산';
+		var item = new Option('거창');
+		document.info.courtNo_sub.options[3] = item;
+		document.info.courtNo_sub.options[3].value='J02';
+		document.info.courtNo_sub.options[3].text='거창';
+		var item = new Option('밀양');
+		document.info.courtNo_sub.options[4] = item;
+		document.info.courtNo_sub.options[4].value='J03';
+		document.info.courtNo_sub.options[4].text='밀양';
+		var item = new Option('진주');
+		document.info.courtNo_sub.options[5] = item;
+		document.info.courtNo_sub.options[5].value='J04';
+		document.info.courtNo_sub.options[5].text='진주';
+		var item = new Option('통영');
+		document.info.courtNo_sub.options[6] = item;
+		document.info.courtNo_sub.options[6].value='J05';
+		document.info.courtNo_sub.options[6].text='통영';
+		var item = new Option('마산');
+		document.info.courtNo_sub.options[7] = item;
+		document.info.courtNo_sub.options[7].value='J06';
+		document.info.courtNo_sub.options[7].text='마산';
+
+    break;
+
+		case "I01" : //대구
+		var item = new Option('전체');
+		document.info.courtNo_sub.options[0] = item;
+		document.info.courtNo_sub.options[0].value=99;
+		document.info.courtNo_sub.options[0].text='전체';
+		var item = new Option('본원');
+		document.info.courtNo_sub.options[1] = item;
+		document.info.courtNo_sub.options[1].value='I01';
+		document.info.courtNo_sub.options[1].text='본원';
+		var item = new Option('서부');
+		document.info.courtNo_sub.options[2] = item;
+		document.info.courtNo_sub.options[2].value='I09';
+		document.info.courtNo_sub.options[2].text='서부';
+		var item = new Option('김천');
+		document.info.courtNo_sub.options[3] = item;
+		document.info.courtNo_sub.options[3].value='I03';
+		document.info.courtNo_sub.options[3].text='김천';
+		var item = new Option('상주');
+		document.info.courtNo_sub.options[4] = item;
+		document.info.courtNo_sub.options[4].value='I04';
+		document.info.courtNo_sub.options[4].text='상주';
+		var item = new Option('안동');
+		document.info.courtNo_sub.options[5] = item;
+		document.info.courtNo_sub.options[5].value='I05';
+		document.info.courtNo_sub.options[5].text='안동';
+		var item = new Option('영덕');
+		document.info.courtNo_sub.options[6] = item;
+		document.info.courtNo_sub.options[6].value='I06';
+		document.info.courtNo_sub.options[6].text='영덕';
+		var item = new Option('의성');
+		document.info.courtNo_sub.options[7] = item;
+		document.info.courtNo_sub.options[7].value='I07';
+		document.info.courtNo_sub.options[7].text='의성';
+		var item = new Option('포항');
+		document.info.courtNo_sub.options[8] = item;
+		document.info.courtNo_sub.options[8].value='I08';
+		document.info.courtNo_sub.options[8].text='포항';
+		var item = new Option('경주');
+		document.info.courtNo_sub.options[9] = item;
+		document.info.courtNo_sub.options[9].value='I02';
+		document.info.courtNo_sub.options[9].text='경주';
+		break;
+
+		case "L01" : 	//광주
+		var item = new Option('전체');
+		document.info.courtNo_sub.options[0] = item;
+		document.info.courtNo_sub.options[0].value=99;
+		document.info.courtNo_sub.options[0].text='전체';
+		var item = new Option('본원');
+		document.info.courtNo_sub.options[1] = item;
+		document.info.courtNo_sub.options[1].value='L01';
+		document.info.courtNo_sub.options[1].text='본원';
+		var item = new Option('순천');
+		document.info.courtNo_sub.options[2] = item;
+		document.info.courtNo_sub.options[2].value='L02';
+		document.info.courtNo_sub.options[2].text='순천';
+		var item = new Option('목포');
+		document.info.courtNo_sub.options[3] = item;
+		document.info.courtNo_sub.options[3].value='L03';
+		document.info.courtNo_sub.options[3].text='목포';
+		var item = new Option('장흥');
+		document.info.courtNo_sub.options[4] = item;
+		document.info.courtNo_sub.options[4].value='L04';
+		document.info.courtNo_sub.options[4].text='장흥';
+		var item = new Option('해남');
+		document.info.courtNo_sub.options[5] = item;
+		document.info.courtNo_sub.options[5].value='L05';
+		document.info.courtNo_sub.options[5].text='해남';
+
+		break;
+
+		case "K01" : 	//전주
+		var item = new Option('전체');
+		document.info.courtNo_sub.options[0] = item;
+		document.info.courtNo_sub.options[0].value=99;
+		document.info.courtNo_sub.options[0].text='전체';
+		var item = new Option('본원');
+		document.info.courtNo_sub.options[1] = item;
+		document.info.courtNo_sub.options[1].value='K01';
+		document.info.courtNo_sub.options[1].text='본원';
+		var item = new Option('남원');
+		document.info.courtNo_sub.options[2] = item;
+		document.info.courtNo_sub.options[2].value='K03';
+		document.info.courtNo_sub.options[2].text='남원';
+		var item = new Option('정읍');
+		document.info.courtNo_sub.options[3] = item;
+		document.info.courtNo_sub.options[3].value='K04';
+		document.info.courtNo_sub.options[3].text='정읍';
+		var item = new Option('군산');
+		document.info.courtNo_sub.options[4] = item;
+		document.info.courtNo_sub.options[4].value='K02';
+		document.info.courtNo_sub.options[4].text='군산';
+		break;
+
+    case "H01" : 		//대전
+    var item = new Option('전체');
+		document.info.courtNo_sub.options[0] = item;
+		document.info.courtNo_sub.options[0].value=99;
+		document.info.courtNo_sub.options[0].text='전체';
+		var item = new Option('본원');
+		document.info.courtNo_sub.options[1] = item;
+		document.info.courtNo_sub.options[1].value='H01';
+		document.info.courtNo_sub.options[1].text='본원';
+		var item = new Option('천안');
+		document.info.courtNo_sub.options[2] = item;
+		document.info.courtNo_sub.options[2].value='H02';
+		document.info.courtNo_sub.options[2].text='천안';
+		var item = new Option('공주');
+		document.info.courtNo_sub.options[3] = item;
+		document.info.courtNo_sub.options[3].value='H03';
+		document.info.courtNo_sub.options[3].text='공주';
+		var item = new Option('서산');
+		document.info.courtNo_sub.options[4] = item;
+		document.info.courtNo_sub.options[4].value='H04';
+		document.info.courtNo_sub.options[4].text='서산';
+		var item = new Option('홍성');
+		document.info.courtNo_sub.options[5] = item;
+		document.info.courtNo_sub.options[5].value='H05';
+		document.info.courtNo_sub.options[5].text='홍성';
+		var item = new Option('논산');
+		document.info.courtNo_sub.options[6] = item;
+		document.info.courtNo_sub.options[6].value='H06';
+		document.info.courtNo_sub.options[6].text='논산';
+		break;
+
+		case "G01" : 		//청주
+		var item = new Option('전체');
+		document.info.courtNo_sub.options[0] = item;
+		document.info.courtNo_sub.options[0].value=99;
+		document.info.courtNo_sub.options[0].text='전체';
+		var item = new Option('본원');
+		document.info.courtNo_sub.options[1] = item;
+		document.info.courtNo_sub.options[1].value='G01';
+		document.info.courtNo_sub.options[1].text='본원';
+		var item = new Option('제천');
+		document.info.courtNo_sub.options[2] = item;
+		document.info.courtNo_sub.options[2].value='G03';
+		document.info.courtNo_sub.options[2].text='제천';
+		var item = new Option('영동');
+		document.info.courtNo_sub.options[3] = item;
+		document.info.courtNo_sub.options[3].value='G04';
+		document.info.courtNo_sub.options[3].text='영동';
+		var item = new Option('충주');
+		document.info.courtNo_sub.options[4] = item;
+		document.info.courtNo_sub.options[4].value='G02';
+		document.info.courtNo_sub.options[4].text='충주';
+		break;
+
+		case "F01" : //춘천
+		var item = new Option('전체');
+		document.info.courtNo_sub.options[0] = item;
+		document.info.courtNo_sub.options[0].value=99;
+		document.info.courtNo_sub.options[0].text='전체';
+		var item = new Option('본원');
+		document.info.courtNo_sub.options[1] = item;
+		document.info.courtNo_sub.options[1].value='F01';
+		document.info.courtNo_sub.options[1].text='본원';
+		var item = new Option('속초');
+		document.info.courtNo_sub.options[2] = item;
+		document.info.courtNo_sub.options[2].value='F03';
+		document.info.courtNo_sub.options[2].text='속초';
+		var item = new Option('원주');
+		document.info.courtNo_sub.options[3] = item;
+		document.info.courtNo_sub.options[3].value='F04';
+		document.info.courtNo_sub.options[3].text='원주';
+		var item = new Option('영월');
+		document.info.courtNo_sub.options[4] = item;
+		document.info.courtNo_sub.options[4].value='F05';
+		document.info.courtNo_sub.options[4].text='영월';
+		var item = new Option('강릉');
+		document.info.courtNo_sub.options[5] = item;
+		document.info.courtNo_sub.options[5].value='F02';
+		document.info.courtNo_sub.options[5].text='강릉';
+		break;
+	}
+}
+
+/**************************************************************************
+법원선택
+**************************************************************************/
+function set_court2(frm_name,main_courtno)
+{
+	var f = eval("document."+frm_name+".courtNo_sub");
+	
+	//법원	
+	f.options[9] = null;
+	f.options[8] = null;
+	f.options[7] = null;
+	f.options[6] = null;
+	f.options[5] = null;
+	f.options[4] = null;
+	f.options[3] = null;
+	f.options[2] = null;
+	f.options[1] = null;
+	f.options[0] = null;		
+	switch(main_courtno)
+	{
+		case "0" : //본원전체		
+		var item = new Option('지원전체');
+		f.options[0] = item;
+		f.options[0].value=99;
+		f.options[0].text='지원전체';		
+		break;
+		
+		case "A00" : //서울지법전체
+		var item = new Option('전체');
+		f.options[0] = item;
+		f.options[0].value=99;
+		f.options[0].text='전체';
+		break;
+		
+		case "A01" : //서울중앙
+		var item = new Option('전체');
+		f.options[0] = item;
+		f.options[0].value=99;
+		f.options[0].text='전체';
+		break;
+		
+		case "A02" : //서울동부
+		var item = new Option('전체');
+		f.options[0] = item;
+		f.options[0].value=99;
+		f.options[0].text='전체';
+		break;
+		
+		case "A03" : //서울서부
+		var item = new Option('전체');
+		f.options[0] = item;
+		f.options[0].value=99;
+		f.options[0].text='전체';
+		break;
+		
+		case "A04" : //서울남부
+		var item = new Option('전체');
+		f.options[0] = item;
+		f.options[0].value=99;
+		f.options[0].text='전체';
+		break;
+		
+		case "A05" : //서울북부
+		var item = new Option('전체');
+		f.options[0] = item;
+		f.options[0].value=99;
+		f.options[0].text='전체';
+		break;
+		
+		case "N01" : //울산
+		var item = new Option('전체');
+		f.options[0] = item;
+		f.options[0].value=99;
+		f.options[0].text='전체';
+		break;
+		
+		case "M01" : //제주
+		var item = new Option('전체');
+		f.options[0] = item;
+		f.options[0].value=99;
+		f.options[0].text='전체';
+		break;
+		
+		case "C01" : //인천
+		var item = new Option('전체');
+		f.options[0] = item;
+		f.options[0].value=99;
+		f.options[0].text='전체';
+		var item = new Option('본원');
+		f.options[1] = item;
+		f.options[1].value='C01';
+		f.options[1].text='본원';
+		var item = new Option('부천');
+		f.options[2] = item;
+		f.options[2].value='C02';
+		f.options[2].text='부천';
+		break;
+            			
+		case "E01" : //수원
+		var item = new Option('전체');
+		f.options[0] = item;
+		f.options[0].value=99;
+		f.options[0].text='전체';
+		var item = new Option('본원');
+		f.options[1] = item;
+		f.options[1].value='E01';
+		f.options[1].text='본원';
+		var item = new Option('성남');
+		f.options[2] = item;
+		f.options[2].value='E02';
+		f.options[2].text='성남';
+		var item = new Option('여주');
+		f.options[3] = item;
+		f.options[3].value='E03';
+		f.options[3].text='여주';
+		var item = new Option('평택');
+		f.options[4] = item;
+		f.options[4].value='E04';
+		f.options[4].text='평택';
+		var item = new Option('안산');
+		f.options[5] = item;
+		f.options[5].value='E05';
+		f.options[5].text='안산';
+		var item = new Option('안양');
+		f.options[6] = item;
+		f.options[6].value='E06';
+		f.options[6].text='안양';
+		break;
+            			
+		case "D01" : //의정부
+		var item = new Option('전체');
+		f.options[0] = item;
+		f.options[0].value=99;
+		f.options[0].text='전체';
+		var item = new Option('본원');
+		f.options[1] = item;
+		f.options[1].value='D01';
+		f.options[1].text='본원';
+		var item = new Option('고양');
+		f.options[2] = item;
+		f.options[2].value='D02';
+		f.options[2].text='고양';
+		break;		                          										
+		
+		case "B01" : //부산
+		var item = new Option('전체');
+		f.options[0] = item;
+		f.options[0].value=99;
+		f.options[0].text='전체';
+		var item = new Option('본원');
+		f.options[1] = item;
+		f.options[1].value='B01';
+		f.options[1].text='본원';
+		var item = new Option('동부');
+		f.options[2] = item;
+		f.options[2].value='B02';
+		f.options[2].text='동부';
+		break;
+		
+		case "J01" : //창원		
+		var item = new Option('전체');
+		f.options[0] = item;
+		f.options[0].value=99;
+		f.options[0].text='전체';
+		var item = new Option('본원');
+		f.options[1] = item;
+		f.options[1].value='J01';
+		f.options[1].text='본원';
+		var item = new Option('거창');
+		f.options[2] = item;
+		f.options[2].value='J02';
+		f.options[2].text='거창';
+		var item = new Option('밀양');
+		f.options[3] = item;
+		f.options[3].value='J03';
+		f.options[3].text='밀양';
+		var item = new Option('진주');
+		f.options[4] = item;
+		f.options[4].value='J04';
+		f.options[4].text='진주';
+		var item = new Option('통영');
+		f.options[5] = item;
+		f.options[5].value='J05';
+		f.options[5].text='통영';
+    break;
+    
+		case "I01" : //대구	
+		var item = new Option('전체');
+		f.options[0] = item;
+		f.options[0].value=99;
+		f.options[0].text='전체';
+		var item = new Option('본원');
+		f.options[1] = item;
+		f.options[1].value='I01';
+		f.options[1].text='본원';
+		var item = new Option('서부');
+		f.options[2] = item;
+		f.options[2].value='I09';
+		f.options[2].text='서부';
+		var item = new Option('김천');
+		f.options[3] = item;
+		f.options[3].value='I03';
+		f.options[3].text='김천';
+		var item = new Option('상주');
+		f.options[4] = item;
+		f.options[4].value='I04';
+		f.options[4].text='상주';
+		var item = new Option('안동');
+		f.options[5] = item;
+		f.options[5].value='I05';
+		f.options[5].text='안동';
+		var item = new Option('영덕');
+		f.options[6] = item;
+		f.options[6].value='I06';
+		f.options[6].text='영덕';
+		var item = new Option('의성');
+		f.options[7] = item;
+		f.options[7].value='I07';
+		f.options[7].text='의성';
+		var item = new Option('포항');
+		f.options[8] = item;
+		f.options[8].value='I08';
+		f.options[8].text='포항';		                          										
+		var item = new Option('경주');
+		f.options[9] = item;
+		f.options[9].value='I02';
+		f.options[9].text='경주';								
+		break;
+		
+		case "L01" : 	//광주
+		var item = new Option('전체');
+		f.options[0] = item;
+		f.options[0].value=99;
+		f.options[0].text='전체';
+		var item = new Option('본원');
+		f.options[1] = item;
+		f.options[1].value='L01';
+		f.options[1].text='본원';
+		var item = new Option('순천');
+		f.options[2] = item;
+		f.options[2].value='L02';
+		f.options[2].text='순천';
+		var item = new Option('목포');
+		f.options[3] = item;
+		f.options[3].value='L03';
+		f.options[3].text='목포';
+		var item = new Option('장흥');
+		f.options[4] = item;
+		f.options[4].value='L04';
+		f.options[4].text='장흥';
+		var item = new Option('해남');
+		f.options[5] = item;
+		f.options[5].value='L05';
+		f.options[5].text='해남';		                          										
+		
+		break;
+		
+		case "K01" : 	//전주							
+		var item = new Option('전체');
+		f.options[0] = item;
+		f.options[0].value=99;
+		f.options[0].text='전체';
+		var item = new Option('본원');
+		f.options[1] = item;
+		f.options[1].value='K01';
+		f.options[1].text='본원';
+		var item = new Option('남원');
+		f.options[2] = item;
+		f.options[2].value='K03';
+		f.options[2].text='남원';
+		var item = new Option('정읍');
+		f.options[3] = item;
+		f.options[3].value='K04';
+		f.options[3].text='정읍';		                          										
+		var item = new Option('군산');
+		f.options[4] = item;
+		f.options[4].value='K02';
+		f.options[4].text='군산';								
+		break;
+    
+    case "H01" : 		//대전
+    var item = new Option('전체');
+		f.options[0] = item;
+		f.options[0].value=99;
+		f.options[0].text='전체';
+		var item = new Option('본원');
+		f.options[1] = item;
+		f.options[1].value='H01';
+		f.options[1].text='본원';
+		var item = new Option('천안');
+		f.options[2] = item;
+		f.options[2].value='H02';
+		f.options[2].text='천안';		
+		var item = new Option('공주');
+		f.options[3] = item;
+		f.options[3].value='H03';
+		f.options[3].text='공주';
+		var item = new Option('서산');
+		f.options[4] = item;
+		f.options[4].value='H04';
+		f.options[4].text='서산';
+		var item = new Option('홍성');
+		f.options[5] = item;
+		f.options[5].value='H05';
+		f.options[5].text='홍성';
+		var item = new Option('논산');
+		f.options[6] = item;
+		f.options[6].value='H06';
+		f.options[6].text='논산';
+		break;
+		
+		case "G01" : 		//청주
+		var item = new Option('전체');
+		f.options[0] = item;
+		f.options[0].value=99;
+		f.options[0].text='전체';
+		var item = new Option('본원');
+		f.options[1] = item;
+		f.options[1].value='G01';
+		f.options[1].text='본원';
+		var item = new Option('제천');
+		f.options[2] = item;
+		f.options[2].value='G03';
+		f.options[2].text='제천';
+		var item = new Option('영동');
+		f.options[3] = item;
+		f.options[3].value='G04';
+		f.options[3].text='영동';
+		var item = new Option('충주');
+		f.options[4] = item;
+		f.options[4].value='G02';
+		f.options[4].text='충주';		
+		break;
+	
+		case "F01" : //춘천		
+		var item = new Option('전체');
+		f.options[0] = item;
+		f.options[0].value=99;
+		f.options[0].text='전체';
+		var item = new Option('본원');
+		f.options[1] = item;
+		f.options[1].value='F01';
+		f.options[1].text='본원';
+		var item = new Option('속초');
+		f.options[2] = item;
+		f.options[2].value='F03';
+		f.options[2].text='속초';
+		var item = new Option('원주');
+		f.options[3] = item;
+		f.options[3].value='F04';
+		f.options[3].text='원주';
+		var item = new Option('영월');
+		f.options[4] = item;
+		f.options[4].value='F05';
+		f.options[4].text='영월';
+		var item = new Option('강릉');
+		f.options[5] = item;
+		f.options[5].value='F02';
+		f.options[5].text='강릉';
+		break;
+	}		                          		
+}
+
+function msgposit(){
+message.style.posLeft = event.x - 20 + document.body.scrollLeft
+message.style.posTop = event.y - 40 + document.body.scrollTop
+}
+
+
+function msgset(str){
+var text
+text ='<table border="0" cellpadding="6" cellspacing="0" bgcolor="#F7F7F7" style="font-size:9pt; border-width:1; border-color:black; border-style:solid;">'
+text += '<tr><td><p><b><font color=red>' + str + '<br><br></b></td></tr></table>'
+message.innerHTML=text
+}
+
+function msghide(){
+message.innerHTML=''
+//message.style.visibility='hidden'
+}
+function newwin(url)
+{
+	POP = window.open( url, "WIN_SUB", "status=0,scrollbars=yes,resizable=0,left=0,top=0,width=1010,height=780" );
+	POP.focus();
+}
+function allTrim(st)
+{
+	var result="";
+ 	//if (st=="") {alert("입력된 글이 없습니다.(allTrim())"); return;}
+ 	var ck;
+ 	for (var i=0; i<st.length; i++)
+ 	{
+  	ck=st.substring(i,i+1);
+  	if (ck!=" ")
+  	{
+  		result=result+ck;
+  	}
+ }
+ return result;
+}
+/*=============================================================================*
+ * 숫자 0으로 초기화 된 1차원 배열을 생성한다.
+ *
+ * param : iSize 배열 크기
+ *
+ * return : this 배열
+ *============================================================================*/
+function makeArray(iSize)
+{
+  this.length = iSize;
+
+  for (i = 1; i <= iSize; i++)
+  {
+    this[i] = 0;
+  }
+  return this;
+}
+
+/*=============================================================================*
+ * 년월을 입력받아 마지막 일를 반환한다(년월)
+ *
+ * param : sYM 입력스트링(YYYYMM)
+ *
+ * return : String 해당월의 마지막날
+ *============================================================================*/
+function lastDay(YYYY,MM)
+{
+  daysArray = new makeArray(12);    // 배열을 생성한다.
+  for (i=1; i<8; i++)
+  {
+    daysArray[i] = 30 + (i%2);
+  }
+
+  for (i=8; i<13; i++)
+  {
+    daysArray[i] = 31 - (i%2);
+  }
+
+  var sYear = YYYY;
+  var sMonth = MM;
+
+
+  if (((sYear % 4 == 0) && (sYear % 100 != 0)) || (sYear % 400 == 0))
+  {
+  daysArray[2] = 29;
+  }
+  else
+  {
+  daysArray[2] = 28;
+  }
+
+  return daysArray[sMonth].toString();
+}
+/*=============================================================================*
+ * 길이가1인 경우 앞에 "0"을 붙인다.
+ *
+ * param : sVal 입력스트링
+ *
+ * return : String  "0"값을 포함하는 값
+ *============================================================================*/
+function addZero(sVal)
+{
+  var iLen = sVal.length;   //인수값의 길이를 구한다.
+  if(iLen == 1)
+  {
+    sVal = "0"+sVal;
+  }
+  else if(iLen == 0)
+  {
+    return;
+  }
+  return sVal;
+}
+
+/*=============================================================================*
+ * 플래시 상단 메뉴 네비게이션
+ * 다른사이트로 연결할 경우 주소를 'http'로 시작해야함
+ *============================================================================*/
+ function GoMenu(arg1,arg2){
+	var url = '/v3/';
+	switch(arg1){
+	case 1 :
+		switch (arg2){
+			case 1 : url = '/v3/M01/info.htm'; break;
+			case 2 : url = '/v3/M01/myauction.php'; break;
+			case 3 : url = '/v3/M01/info2.htm'; break;
+			case 4 : url = '/v3/M01/info3.htm'; break;
+			case 5 : url = '/v3/M01/info4.htm'; break;
+			case 6 : url = '/v3/M01/info5.htm'; break;
+			case 7 : url = '/v3/M01/info6.htm'; break;
+			case 8 : url = '/v3/M01/info7.htm'; break;
+			case 9 : url = '/v3/M01/info8.htm'; break;
+			case 10 : url = '/v3/M01/info1-6.htm'; break;
+			case 11 : url = '/v3/M01/subway.php'; break;
+			//case 12 : url = '/v3/M01/mapsrc.php'; break;
+			case 13 : url = '/v3/M01/interest_region.php'; break;
+			case 15 : url = '/v3/M01/info_statistic.php'; break;
+		}
+	break;
+
+	case 2 :
+		switch (arg2){
+			case 1 : url = '/v3/M02_v3/index.htm'; break;
+		}
+	break;
+
+	case 3 :
+		switch (arg2){
+			case 1 : url = '/v3/M10/info.htm'; break;
+			case 2 : url = '/v3/M03/qna4.htm'; break;
+			case 3 : url = '/v3/M03/lawboard.htm'; break;
+			case 4 : url = '/v3/M03/lien_inv.htm'; break;
+			case 7 : url = '/v3/M03/qna7.htm'; break;
+		}
+	break;
+
+	case 4 :
+		switch (arg2){
+			case 1 : url = '/v3/M04/lecture.htm'; break;
+			case 1-2 : url = '/v3/M04/lecture1-2.htm'; break;
+			case 1-3 : url = '/v3/M04/lecture1-4.htm'; break;
+			case 1-4 : url = '/v3/M04/lecture1-5.htm'; break;
+			case 1-5 : url = '/v3/M04/lecture1-6.htm'; break;
+			case 1-6 : url = '/v3/M04/lecture1-7.htm'; break;
+			case 1-9 : url = '/v3/M04/lecture1-9.htm'; break;
+			case 1-10 : url = '/v3/M04/lecture1-3.htm'; break;
+			case 1-11 : url = '/v3/M04/lecture1-10.htm'; break;
+			case 1-12 : url = '/v3/M04/lecture1-11.htm'; break;
+		}
+	break;
+
+	case 5 :
+		switch (arg2){
+			case 1 : url = '/v3/M05/M05_1.htm'; break;
+			case 2 : url = '/v3/M05/M05_2.htm'; break;
+			case 3 : url = '/v3/M05/M05_3.htm'; break;
+			case 4 : url = '/v3/M05/M05_4.htm'; break;
+			case 5 : url = '/v3/M05/M05_5.htm'; break;
+			case 6 : url = '/v3/M05/M05_6.htm'; break;
+			case 7 : url = '/v3/M05/M05_7.htm'; break;
+			case 8 : url = '/v3/M05/M05_8.htm'; break;
+			case 9 : url = '/v3/M05/M05_9.htm'; break;
+		}
+	break;
+
+	case 6 :
+
+		switch (arg2){
+			//case 1 : url = '/v3/M06/service.htm'; break;
+			case 1 : url = '/v3/M06/service9.htm'; break;
+			case 2 : url = '/v3/M06/service8.htm'; break;
+			case 3 : url = '/v3/M06/chusim.htm'; break;
+			case 4 : url = '/v3/M07/qna2.htm'; break;
+			case 5 : url = '/v3/M07/qna2.htm'; break;
+		}
+		//url = 'http://www.bank-law.co.kr/request.htm';
+	break;
+
+	case 7 :
+		switch (arg2){
+			case 1 : url = '/consult/'; break;
+			case 2 : url = '/v3/M07/M07_3.htm'; break;
+			case 3 : url = '/v3/M07/M07_4.htm'; break;
+			case 4 : url = '/v3/M07/M07_5.htm'; break;
+			case 5 : url = '/v3/M06/service7.htm'; break;
+			case 6 : url = '/v3/M03/qna.htm'; break;
+			case 7 : url = '/v3/M03/qna4.htm'; break;
+			case 8 : url = '/v3/M03/qna7.htm'; break;
+			case 9 : url = '/v3/M06/service10.htm'; break;
+
+		}
+	break;
+
+	case 8 :
+		switch (arg2){
+			case 1 : url = '/v3/M08/data.htm'; break;					//경매절차
+			case 2 : url = '/v3/M08/data2.htm'; break;				//경매용어
+			case 3 : url = '/v3/M08/data4.htm'; break;				//경매서식
+			case 4 : url = '/v3/M08/data6.htm'; break;				//관할법원
+			case 5 : url = '/v3/M08/service10.htm'; break;		//부동산관련사이트
+			case 6 : url = '/v3/M08/service.htm'; break;			//경매관련 신청서
+			case 7 : url = '/v3/M08/service3.htm'; break;			//경매관련 도표
+		}
+	break;
+
+	case 9 :
+		switch (arg2){
+			case 1 	: url = '/v3/M09/my2.htm'; break; 									//관심경매물건
+			case 2 	: url = '/v3/M09/mylist_p.php'; break;								//관심공매물건
+			case 3 	: url = '/v3/M09/mypage/2009my_mms01.php'; break;		//모바일경매
+			case 4 	: url = '/v3/M09/my8.htm'; break;										//모의입찰목록
+			case 5 	: url = '/v3/M09/my_qna.htm'; break;								//상담록록
+			case 6 	: url = 'https://www.speedauction.co.kr/v3/M09/members2-2.htm'; break; 						//회원정보수정
+			case 7 	: url = '/v3/M09/my7.htm'; break; 									//스피드머니
+			case 8 	: url = '/v3/M09/my6.htm'; break; 									//결재내역
+			case 9 	: url = '/v3/M09/my5.htm'; break; 									//기간연장/요금결재
+			case 10 : url = 'popup'; break; 														//입찰달력
+			case 11 : url = '/v3/M09/members_out.php'; break;		 				//회원탈퇴
+			case 12 : url = '/v3/M09/sharing.htm'; break;		 						//사건공유목록
+			case 14 : url = '/v3/M09/my14.htm'; break;									//관심예정물건
+			case 15 : url = '/v3/M09/my15.htm'; break;									//전달받은물건						
+			case 16 : url = '/v3/M09/my16.htm'; break;		 							//휴대폰전송물건
+			case 17 : url = '/v3/M09/my15-2.htm'; break;								//전달한물건			
+		}
+	break;
+	case 11 :
+		switch (arg2){
+			case 1 	: url = '/v3/M01/info8.htm?maintab=1_yj&lefttab=9'; break; 									//예정물건
+		}
+	break;
+	}
+
+	if (arg1 != "11")
+	{
+		url = url + '?maintab='+arg1+'&lefttab='+arg2;
+	}
+	if( url.substring(0,4) == 'popu' )
+	{
+		var style="top=0,left=0,width=1000,height=680,scrollbars=yes,border=0,resizable=yes";
+		window.open("/v3/M09/mycalendar/calendar.htm",'mycalendar',style);
+	}
+	else if( url.substring(0,4) == 'cons' )
+	{
+		var style="top=0,left=0,width=1000,height=680,scrollbars=yes,border=0,resizable=yes";
+		window.open("/consult/",'consult',style);
+	}
+	else if( url.substring(0,4) =='http' )
+	{
+		url = url + '&mc='+G_mc;
+		window.open(url,'newwin','');
+	}
+	else
+	{
+		document.location.href = url;
+	}
+
+ }
+
+/*************************************************************
+		function mouseMemo,mouseMemx(번호)
+		용도    : 툴팁
+**************************************************************/
+function mouseMemo(num) {
+	eval('tooltip'+num).style.visibility = "visible";  // 툴팁 보이기
+}
+function mouseMemx(num) {
+	eval('tooltip'+num).style.visibility = "hidden";  // 툴팁 감추기
+}
+
+/*************************************************************
+		function detail_view(링크주소,법원코드,사건년도,사건번호,물건번호,??)
+		용도    : 사건상세페이지
+**************************************************************/
+function detail_view(var1,var2,var3,var4, authkey)
+{
+	var f = document.result_switch;
+
+	var style = "Left=0,Top=0,width=874,height=700,scrollbars=yes";
+	window.open("about:blank",'resultSwitch',style);
+	f.target = "resultSwitch";
+
+	f.courtNo.value = var1;
+	f.eventNo1.value = var2;
+	f.eventNo2.value = var3;
+	f.objNo.value = var4;
+	f.auth_key.value = authkey;
+
+	f.submit();
+}
+
+function consulting_detail_view(var1,var2,var3,var4, authkey)
+{
+	var f = document.result_switch;
+
+	var style = "Left=0,Top=0,width=874,height=700,scrollbars=yes";
+	window.open("about:blank",'resultSwitch',style);
+	f.target = "resultSwitch";
+
+	f.courtNo.value = var1;
+	f.eventNo1.value = var2;
+	f.eventNo2.value = var3;
+	f.objNo.value = var4;
+	f.auth_key.value = authkey;
+	f.page_mode.value = 'consulting';
+
+	f.submit();
+}
+
+function consul_detail_view(var1,var2,var3,var4,var5)
+{
+	var f = document.consult_frm;
+
+	var style = "Left=0,Top=0,width=874,height=700,scrollbars=yes";
+	window.open("about:blank",'consul_view',style);
+	f.target = "consul_view";
+
+	f.courtNo.value 			= var1;
+	f.eventNo1.value 			= var2;
+	f.eventNo2.value 			= var3;
+	f.objNo.value 				= var4;	
+	f.consult_code.value 	= var5;
+
+	f.submit();
+}
+
+function basicInputTitle_Click( f, txt ){
+	f.style.color = 'black';
+	if(f.value==txt) f.value = "";
+}
+
+function basicInputTitle_Blur( f, txt ){
+	if(f.value=="") f.style.color = 'gray';
+	if(f.value=="") f.value = txt;
+}
+
+function m2topy(v){
+	return Math.ceil(v*0.3025);
+}
+function m2topySpan( id , val){
+	var py = m2topy( val );
+	if(  py > 0) document.getElementById( id ).innerHTML = '<br>&nbsp;&nbsp;<font color=blue>'+commaSplit_new(py)+'평</font>';
+	else document.getElementById( id ).innerHTML = "";
+}
+
+/*************************************************************
+		function consulting_loan_form_checkit(폼네임)
+		용도    : 컨설팅 및 대출의뢰 입력폼 체크
+**************************************************************/
+function consulting_loan_form_checkit(form)
+{
+	if(!form.courtNo.selectedIndex > 0)
+	{
+		alert("관할법원은 필수 선택사항입니다.");
+	  form.courtNo.focus();
+	  return false;
+	}
+	if(!form.eventNo.selectedIndex > 0)
+	{
+		alert("사건년도는 필수 선택사항입니다.");
+	  form.eventNo.focus();
+	  return false;
+	}
+	if(!form.eventNo2.value)
+	{
+		alert("사건번호는 필수 입력사항입니다.");
+	  form.eventNo2.focus();
+	  return false;
+	}
+	if(!form.name.value)
+	{
+		alert("성명은 필수 입력사항입니다.");
+	  form.name.focus();
+	  return false;
+	}
+	if(!form.tel.value)
+	{
+		alert("연락처는 필수 입력사항입니다.");
+	  form.tel.focus();
+	  return false;
+	}
+	return true;
+}
+
+function f_onlyNum(){
+	 var key = event.keyCode;
+	 if(!(key==8||key==9||key==13||key==46||key==144||(key>=48&&key<=57)||key==110||key==190)){
+			 alert('숫자만 입력 가능합니다');
+			 event.returnValue = false;
+	 }
+}
+
+function f_setCommaValue(el){
+	if( !el.value ) return;
+	 var value = f_getOnlyNum(el);
+	 var temp = '';
+	 var idx = value.length % 3;
+	 
+	 if(idx>0 && value.length > 3){
+			 temp = value.substring(0, idx) + ',';
+			 value = value.substring(idx);
+	 }
+
+	 for(i=(value.length/3) - 1; i>0; i--){
+			 temp += value.substring(0, 3) + ',';
+			 value = value.substring(3);  
+	 }
+
+	 temp += value;
+	 el.value = temp;
+}
+
+// 숫자만 반환
+function f_getOnlyNum(el){
+	 var value = el.value;
+	 if(value.trim().length == 0){
+			 value = '0';
+}
+
+	 value = value.replaceAll(',', '');
+	 value = parseInt(value, 10).toString();
+
+	 return value;
+}
+function open_img(url) {
+	try {
+		var left = Math.floor((screen.availWidth - 250) / 2);
+		var top = Math.floor((screen.availHeight - 100) / 2);
+		try { tatterImagePopup.close(); } catch(e) { }
+		tatterImagePopup = window.open("", "", "width=250, height=100, left=" + left + ", top=" + top + ", scrollbars=no, resizable=yes");
+		tatterImagePopup.document.open("text/html", "replace");
+		tatterImagePopup.document.write(
+			'<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">\r\n' +
+			'<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko">\r\n' +
+			'	<head>\r\n' +
+			'		<meta http-equiv="content-type" content="text/html; charset=utf-8"/>\r\n' +
+			'		<title> :: View :: </title>\r\n' +
+			'		<style type="text/css">\r\n' +
+			'			html, body { width: 100%; height: 100%; margin: 0; padding: 0; cursor: pointer; text-align: center; line-height: 0; }\r\n' +
+			'			div { width: 100%; height: 100%; overflow: auto; }\r\n' +
+			'		</style>\r\n' +
+			'		<script type="text/javascript">\r\n' +
+			((navigator.userAgent.indexOf("Safari") > -1) ?
+				'			function resizeImage() {\r\n' :
+				'			window.onload = function() {\r\n') +
+			'				var container = document.getElementById("Container");\r\n' +
+			'				var image = document.getElementById("Image");\r\n' +
+			'				var resizeWidth = 0, resizeHeight = 0, positionTop = 0, positionLeft = 0;\r\n' +
+			'				var offsetTop = window.screenTop || window.screenY;\r\n' +
+			'				var offsetLeft = window.screenLeft || window.screenX;\r\n' +
+			'				if(navigator.userAgent.indexOf("Safari") > -1) {\r\n' +
+			'					var width = Math.min(image.width + 50, screen.availWidth - 100);\r\n' +
+			'					var height = Math.min(image.height + 50, screen.availHeight - 100);\r\n' +
+			'					window.moveTo((screen.availWidth - width) / 2, (screen.availHeight - height) / 2);\r\n' +
+			'					window.resizeTo(width, height);\r\n' +
+			'					return;\r\n' +
+			'				}\r\n' +
+			'				if(container.scrollWidth > container.offsetWidth) {\r\n' +
+			'					resizeWidth += container.scrollWidth - container.offsetWidth;\r\n' +
+			'					if(container.offsetWidth + resizeWidth + 100 > screen.availWidth) {\r\n' +
+			'						resizeWidth = screen.availWidth - container.offsetWidth - 100;\r\n' +
+			'						positionLeft = -resizeWidth / 2;\r\n' +
+			'						resizeHeight += 20;\r\n' +
+			'					}\r\n' +
+			'					else {\r\n' +
+			'						positionLeft = -resizeWidth / 2;\r\n' +
+			'					}\r\n' +
+			'				}\r\n' +
+			'				if(container.scrollHeight > container.offsetHeight) {\r\n' +
+			'					resizeHeight += container.scrollHeight - container.offsetHeight;\r\n' +
+			'					if(container.offsetHeight + resizeHeight + 100 > screen.availHeight - 50) {\r\n' +
+			'						resizeHeight = screen.availHeight - container.offsetHeight - 100 - 40;\r\n' +
+			'						positionTop = -resizeHeight / 2;\r\n' +
+			'						resizeWidth += 20;\r\n' +
+			'					}\r\n' +
+			'					else {\r\n' +
+			'						positionTop = -resizeHeight / 2;\r\n' +
+			'					}\r\n' +
+			'				}\r\n' +
+			'				if(resizeWidth == 0 && resizeHeight == 0)\r\n' +
+			'					image.style.marginTop = ((container.offsetHeight - image.height) / 2) + "px";\r\n' +
+			'				window.moveBy(positionLeft, positionTop - 35);\r\n' +
+			'				window.resizeBy(resizeWidth, resizeHeight);\r\n' +
+			'			}\r\n' +
+			'		</script>\r\n' +
+			'	</head>\r\n' +
+			'	<body onclick="window.close()">\r\n' +
+			((navigator.userAgent.indexOf("Safari") > -1) ?
+				'		<div id="Container"><img id="Image" src="' + url + '" alt="" onload="resizeImage()"/></div>\r\n' :
+				'		<div id="Container"><img id="Image" src="' + url + '" alt=""/></div>\r\n') +
+			'	</body>\r\n' +
+			'</html>'
+		);
+		tatterImagePopup.document.close();
+		if(tatterImagePopup.document.focus)
+			tatterImagePopup.document.focus();
+	}
+	catch(e) {
+		window.open(url, "_blank");
+	}
+}
+
+/* 가끔가다 날짜가 안맞는 버그가 있음
+function getDateDiff(date1,date2)
+{
+	var arrDate1 = date1.split("-");
+	var getDate1 = new Date(parseInt(arrDate1[0]),parseInt(arrDate1[1])-1,parseInt(arrDate1[2]));
+	var arrDate2 = date2.split("-");
+	var getDate2 = new Date(parseInt(arrDate2[0]),parseInt(arrDate2[1])-1,parseInt(arrDate2[2]));
+
+	var getDiffTime = getDate1.getTime() - getDate2.getTime();
+
+	return Math.floor(getDiffTime / (1000 * 60 * 60 * 24));
+}
+*/
+
+function getDateDiff( date1, date2 ) {
+  //Get 1 day in milliseconds
+	var arrDate1 = date1.split("-");
+	var ddate1 = new Date(parseInt(arrDate1[0]),parseInt(arrDate1[1], 10)-1,parseInt(arrDate1[2], 10));
+	var arrDate2 = date2.split("-");
+	var ddate2 = new Date(parseInt(arrDate2[0]),parseInt(arrDate2[1], 10)-1,parseInt(arrDate2[2], 10));
+
+	var d1 = Date.UTC(ddate1.getFullYear(), ddate1.getMonth(), ddate1.getDate());
+	var d2 = Date.UTC(ddate2.getFullYear(), ddate2.getMonth(), ddate2.getDate());
+	var ms = Math.abs(d1-d2);
+	return Math.floor(ms/1000/60/60/24);
+}
