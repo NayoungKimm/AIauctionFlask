@@ -386,7 +386,8 @@ def submit_data():
     logging.debug(f"keyword: {keyword}")
     # 다른 값을 로그로 찍고 싶으면 여기에 추가
     driver.quit()
-    return redirect(url_for('result'))
+    
+    return jsonify({"status": "success", "redirect": url_for('result')})
 
 @app.route("/login", methods=["POST"])
 def login():

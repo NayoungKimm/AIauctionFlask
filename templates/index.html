@@ -31,6 +31,17 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
     <link rel="shortcut icon" href="{{ url_for('static', filename='img/파비콘.png') }}" type="image/x-icon"/>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        #submitButton {
+            color: black;
+            font-weight: bold;
+            background-color: rgb(122, 170, 122);
+            display: block;  /* 버튼을 블록 요소로 만들어 전체 너비를 차지하게 함 */
+            margin: 20px auto; /* 위쪽으로 20px의 여백을 가지고 가운데 정렬 */
+            width: 100%; /* 버튼의 가로 길이를 부모 요소와 동일하게 설정 */
+            font-size: 20px; /* 글자 크기 설정 */
+        }
+    </style>
 </head>
 
 <body>
@@ -150,28 +161,34 @@
                                             </script>
                                             
                                         </div>
+                                        <button class="btn_1 bg-body rounded border border-light btn float-right" id="submitButton">검색</button>
                                     </form>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <button class="btn_1 bg-body rounded border border-light btn float-right" id="submitButton">검색</button>
+
                 <!-- 기다리는 중 메시지 -->
-                <div id="waiting-message">
+                <div id="waiting-message" style="display: none;">
                     데이터 처리 중입니다. 잠시만 기다려주세요...
                 </div>
                 <!-- 결과 보기 버튼 (초기에는 숨김) -->
-                <button class="btn_1 bg-body rounded border border-light btn float-right" id="submitButton" onclick="goToResult()" style="display: none;">결과 보기</button>
                 <script>
-                    function goToResult() {
-                        window.location.href = "{{ url_for('result') }}";
+                    function showWaitingMessage() {
+                        $("#waiting-message").show();
                     }
 
-                    // 페이지 로드 시 데이터 처리 요청 시작
-                    $(document).ready(function() {
+                    function hideWaitingMessage() {
+                        $("#waiting-message").hide();
+                    }
+
+                    function sendDataToServer(event) {
+                        event.preventDefault(); // 폼의 기본 제출 동작을 방지
+
                         // AJAX 요청 보내기
                         $.ajax({
+                            beforeSend: showWaitingMessage,
                             url: '/submit',
                             method: 'POST',
                             contentType: 'application/json',
@@ -182,19 +199,28 @@
                                 역과의거리: $("#distanceInput").val(),
                             }),
                             success: function(response) {
+                                console.log("Success callback triggered");
                                 console.log(response);
-                                // 데이터 처리 완료되면 "결과 보기" 버튼 활성화
-                                $("#waiting-message").hide();
-                                $("#submitButton").show();
+                                hideWaitingMessage();
+                                if (response.status === "success") {
+                                    window.location.href = response.redirect;
+                                } else {
+                                    alert("데이터 처리 중 문제가 발생했습니다. 다시 시도해주세요.");
+                                }
                             },
                             error: function(error) {
                                 console.log(error);
-                                // 에러 메시지나 알림 표시
+                                hideWaitingMessage();
                                 alert("데이터 처리 중 에러가 발생했습니다. 다시 시도해주세요.");
                             }
                         });
+                    }
+
+                    $(document).ready(function() {
+                        $("#submitButton").click(sendDataToServer);
                     });
-                </script>
+
+                </script>                
             </div>
         </div>
     </section>
@@ -395,72 +421,6 @@
         </div>
     </section>
     <!--top place end-->
-
-
-
-    <!--top place start-->
-    <!--top place end-->
-
-    <!--::industries start::-->
-    <!-- <section class="best_services section_padding">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-xl-6">
-                    <div class="section_tittle text-center">
-                        <h2>We offered best services</h2>
-                        <p>Waters make fish every without firmament saw had. Morning air subdue. Our. Air very one. Whales grass is fish whales winged.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-3 col-sm-6">
-                    <div class="single_ihotel_list">
-                        <img src="img/services_1.png" alt="">
-                        <h3> <a href="#"> Transportation</a></h3>
-                        <p>All transportation cost we bear</p>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-sm-6">
-                    <div class="single_ihotel_list">
-                        <img src="img/services_2.png" alt="">
-                        <h3> <a href="#"> Guidence</a></h3>
-                        <p>We offer the best guidence for you</p>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-sm-6">
-                    <div class="single_ihotel_list">
-                        <img src="img/services_3.png" alt="">
-                        <h3> <a href="#"> Accomodation</a></h3>
-                        <p>Luxarious and comfortable</p>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-sm-6">
-                    <div class="single_ihotel_list">
-                        <img src="img/services_4.png" alt="">
-                        <h3> <a href="#"> Discover world</a></h3>
-                        <p>Best tour plan for your next tour</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section> -->
-    <!--::industries end::-->
-
-    <!-- footer part start-->
-
-        <div class="container-fluid">
-            <div class="row justify-content-center">
-                <div class="col-lg-12">
-                    <div class="copyright_part_text text-center">
-                        <p class="footer-text m-0"><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-<!-- Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="ti-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a> -->
-<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </footer>
-    <!-- footer part end-->
 
         <!-- jquery plugins here-->
     <script src="{{ url_for('static', filename='js/jquery-1.12.1.min.js') }}"></script>
