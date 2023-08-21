@@ -31,6 +31,8 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
     <link rel="shortcut icon" href="{{ url_for('static', filename='img/파비콘.png') }}" type="image/x-icon"/>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jwt-decode@3.1.2/build/jwt-decode.min.js"></script>
+
     <style>
         #submitButton {
             color: black;
@@ -42,6 +44,7 @@
             font-size: 20px; /* 글자 크기 설정 */
         }
     </style>
+   
 </head>
 
 <body>
@@ -90,7 +93,34 @@
                                     </li>
                                 </ul>
                             </div>
-                            <a href="{{ url_for('login2') }}" class="btn_1 d-none d-lg-block rounded-pill">소셜로그인</a>
+                            <a href="{{ url_for('login2') }}" id="loginButton" class="btn_1 d-none d-lg-block rounded-pill">소셜로그인</a>
+                            <script>
+                                document.addEventListener("DOMContentLoaded", function () {
+                                    var jwtToken = localStorage.getItem("jwt");
+                                    
+                                    if (jwtToken) {
+                                        try {
+                                            var decodedToken = jwt_decode(jwtToken);  // 함수 이름이 'jwt_decode'로 변경되었습니다.
+                                            var username = decodedToken.name;
+                                            var loginButton = document.getElementById("loginButton");
+
+                                            if (loginButton) {
+                                                if(username) {
+                                                    loginButton.innerHTML = '<span style="font-weight: bold; font-size: 1.3em;">' + username + '</span><span style="color: gray; font-weight: bold;"> 님 로그인되었습니다!</span>';
+                                                } else {
+                                                    loginButton.innerHTML = '<span style="font-weight: bold; color: gray;">로그인 되었습니다!</span>';
+                                                }
+                                                loginButton.href = "javascript:void(0)"; // 링크 비활성화
+                                                loginButton.classList.remove("btn_1"); // 필요하다면 버튼 스타일을 변경하거나 제거
+                                            }
+
+                                        } catch (error) {
+                                            console.error("Error decoding JWT:", error);  
+                                        }
+                                    }
+                                });
+                            </script>
+      
                         </nav>
                     </div>
                 </div>

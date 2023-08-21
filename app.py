@@ -389,7 +389,7 @@ def submit_data():
     
     return jsonify({"status": "success", "redirect": url_for('result')})
 
-@app.route("/login", methods=["POST"])
+@app.route("/login", methods=['GET',"POST"])
 def login():
     kakao_token = request.json.get("access_token")
     if kakao_token is None:

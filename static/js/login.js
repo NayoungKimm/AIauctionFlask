@@ -1,3 +1,7 @@
+function redirectToIndex() {
+  window.location.href = INDEX_URL;
+}
+
 document.addEventListener("DOMContentLoaded", function () {
   // Kakao JavaScript SDK의 초기화와 로그인 버튼에 이벤트 핸들러를 설정합니다.
   Kakao.init("4887e7736a873f2e1e22abb50be6b966");
@@ -39,9 +43,8 @@ document.addEventListener("DOMContentLoaded", function () {
               }
 
               localStorage.setItem("jwt", data.token);
-
               // 로그인 성공 시 index.html로 이동
-              window.location.href = "index.html";
+              redirectToIndex(); // 수정된 함수 호출
             })
             .catch((error) => {
               console.error("Error:", error);

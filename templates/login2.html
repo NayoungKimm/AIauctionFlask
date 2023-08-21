@@ -1,47 +1,57 @@
 <!DOCTYPE html>
-<html lang="ko" class="no-js" >
-    <head>
-        <!-- Meta tags and other head elements if any -->
-    
-        <!-- Stylesheets -->
-        <link rel="stylesheet" href="{{ url_for('static', filename='css/login.css') }}">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-        <link rel="stylesheet" href="path_to_typicons.css"> <!-- Typicons CSS path -->
-        <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400" rel="stylesheet">
-        <style>
-            body, html {
-                font-family: 'Source Sans Pro', sans-serif;
-                background-size: cover;
-                height: 100vh;
-                background-image: url({{ url_for('static', filename='img/서울시내2.jpeg') }});
-                padding: 0;
-                margin: 0;
-            }
-            input.underline { border: 0; border-bottom: 1px solid rgb(246, 165, 13); }
-        </style>
-    
-        <!-- External JS -->
-        <script type="text/javascript" src="https://static.nid.naver.com/js/naveridlogin_js_sdk_2.0.0.js" charset="utf-8"></script>
-        <script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
-        <script src="https://developers.kakao.com/sdk/js/kakao.min.js"></script>
-    
-        <!-- Internal JS -->
-        <script src="{{ url_for('static', filename='js/login.js') }}"></script>
-    
-    </head>
-    
-    <body id="particles-js"></body>
+<html lang="ko" class="no-js">
+
+<head>
+    <!-- 기타 head 요소들 (메타 태그, 타이틀 등) -->
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/login.css') }}">
+    <!-- ... 기타 스타일시트 링크 -->
+
+    <!-- External JS -->
+    <script type="text/javascript" src="https://static.nid.naver.com/js/naveridlogin_js_sdk_2.0.0.js" charset="utf-8"></script>
+    <script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
+    <script src="https://developers.kakao.com/sdk/js/kakao.min.js"></script>
+
+    <style>
+        body, html {
+            font-family: 'Source Sans Pro', sans-serif;
+            background-size: cover;
+            height: 100vh;
+            background-image: url({{ url_for('static', filename='img/서울시내2.jpeg') }});
+            padding: 0;
+            margin: 0;
+        }
+        input.underline { border: 0; border-bottom: 1px solid rgb(246, 165, 13); }
+    </style>
+</head>
+
+<body id="particles-js">
     <div class="animated bounceInDown">
-    <div class="container">
-        <span class="error animated tada" id="msg"></span>
-        <form name="form1" class="box" onsubmit="return checkStuff()">
-        <h1><span>Villa Space</span></h1>
-        <h3>로그인</h3>
-            <div class="input-group">
-                <i class="bx bxs-lock-alt"></i>
-            </div>
-            <img id="kakao-login-btn" src="{{ url_for('static', filename='img/kakao_login.png') }}">
-            <input type="submit" value="로그인 후 서비스 이용이 가능합니다." class="btn1">
-        </form>
+        <div class="container">
+            <span class="error animated tada" id="msg"></span>
+            <form name="form1" class="box" onsubmit="return checkStuff()">
+                <h1><span>Villa Space</span></h1>
+                <h3>로그인</h3>
+                <div class="input-group">
+                    <i class="bx bxs-lock-alt"></i>
+                </div>
+                <img id="kakao-login-btn" src="{{ url_for('static', filename='img/kakao_login.png') }}">
+                <input type="submit" value="로그인 후 서비스 이용이 가능합니다." class="btn1">
+            </form>
+        </div>
+    </div>
+
+    <!-- Internal JS -->
+    <script src="{{ url_for('static', filename='js/login.js') }}"></script>
+    <script>
+        var INDEX_URL = "{{ url_for('index') }}";
+
+        document.addEventListener("DOMContentLoaded", function () {
+        var jwtToken = localStorage.getItem("jwt");
+        console.log("JWT Token:", jwtToken);  // 로컬 스토리지에 저장된 토큰 로깅
+    });
+
+    </script>
+</body>
 </html>
