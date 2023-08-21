@@ -31,14 +31,12 @@ import jwt
 app = Flask(__name__)
 CORS(app, resources={r"/submit": {"origins": "http://127.0.0.1:5000"}})
 
-# 데이터베이스 설정
-password = "Kknnyy0819@@!"
-url_encoded_password = quote_plus(password)
-app.config[
-    "SQLALCHEMY_DATABASE_URI"
-] = f"mysql+pymysql://root:{url_encoded_password}@localhost/Estate_db"
-db = SQLAlchemy(app)
+DB_USER = os.environ.get('DB_USER')
+DB_PASSWORD = os.environ.get('DB_PASSWORD')
+url_encoded_password = quote_plus(DB_PASSWORD)
+app.config["SQLALCHEMY_DATABASE_URI"] = f"mysql+pymysql://{DB_USER}:{url_encoded_password}@localhost/Estate_db"
 
+db = SQLAlchemy(app)
 
 # User 모델 정의
 class Users(db.Model):
@@ -46,7 +44,6 @@ class Users(db.Model):
     email = db.Column(db.String(120), unique=True, nullable=False)
     gender = db.Column(db.String(10), nullable=False)
     name = db.Column(db.String(20), nullable=False)
-
 
 # 사용자 정보를 데이터베이스에 저장
 def create_user(email, gender, nickname):
