@@ -30,9 +30,9 @@ import jwt
 
 app = Flask(__name__)
 CORS(app, resources={r"/submit": {"origins": "http://127.0.0.1:5000"}})
-
+DB_PASSWORD="Kknnyy0819@@!"
 DB_USER = os.environ.get('DB_USER')
-DB_PASSWORD = os.environ.get('DB_PASSWORD')
+DB_PASSWORD = os.environ.get(str(DB_PASSWORD))
 url_encoded_password = quote_plus(DB_PASSWORD)
 app.config["SQLALCHEMY_DATABASE_URI"] = f"mysql+pymysql://{DB_USER}:{url_encoded_password}@localhost/Estate_db"
 
