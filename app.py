@@ -32,9 +32,9 @@ app = Flask(__name__)
 CORS(app, resources={r"/submit": {"origins": "http://127.0.0.1:5000"}})
 DB_PASSWORD="Kknnyy0819@@!"
 DB_USER = os.environ.get('DB_USER')
-DB_PASSWORD = os.environ.get(str(DB_PASSWORD))
-url_encoded_password = quote_plus(DB_PASSWORD)
-app.config["SQLALCHEMY_DATABASE_URI"] = f"mysql+pymysql://{DB_USER}:{url_encoded_password}@localhost/Estate_db"
+# 문자열을 바이트로 변환하여 quote_plus 사용
+url_encoded_password = quote_plus(DB_PASSWORD.encode('utf-8'))
+app.config["SQLALCHEMY_DATABASE_URI"] = f"mysql+pymysql://{DB_USER}:{url_encoded_password}@localhost/Users_db"
 
 db = SQLAlchemy(app)
 
@@ -72,8 +72,9 @@ def submit_data():
     data = pd.read_csv("final_database.csv")
 
     chrome_options = Options()
-    chrome_options.add_argument("--headless")  # 이 부분을 추가합니다.
-    chrome_service = Service(executable_path='/Users/ny/Downloads/chromedriver-mac-x64/chromedriver')
+    chrome_options.add_argument("--headless")
+    chrome_driver_path = '/Users/ny/Downloads/chromedriver-mac-x64/chromedriver'
+    chrome_service = Service(executable_path=chrome_driver_path)
     driver = webdriver.Chrome(service=chrome_service, options=chrome_options)
     driver.get('https://www.speedauction.co.kr/v3/')
 
