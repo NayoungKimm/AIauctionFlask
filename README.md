@@ -40,10 +40,11 @@ https://youtu.be/2TEAM8fRNM0
 
 23.04.01~23.08.31
 
-| 이름 | 버튼 |
-|------|------|
-| 이다은 | <button style="padding: 10px 20px; font-size: 16px; text-align: center; text-decoration: none; cursor: pointer; outline: none; color: #fff; background-color: #007BFF; border: none; border-radius: 5px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); transition: background-color 0.3s;" onclick="alert('이다은 버튼 클릭')">클릭</button> |
-| 김나영 | <button style="padding: 10px 20px; font-size: 16px; text-align: center; text-decoration: none; cursor: pointer; outline: none; color: #fff; background-color: #007BFF; border: none; border-radius: 5px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); transition: background-color 0.3s;" onclick="alert('김나영 버튼 클릭')">클릭</button> |
+### 이다은
+<button style="padding: 10px 20px; font-size: 16px; text-align: center; text-decoration: none; cursor: pointer; outline: none; color: #fff; background-color: #007BFF; border: none; border-radius: 25px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); transition: background-color 0.3s;" onclick="alert('이다은 버튼 클릭')">이다은</button>
+
+### 김나영
+<button style="padding: 10px 20px; font-size: 16px; text-align: center; text-decoration: none; cursor: pointer; outline: none; color: #fff; background-color: #007BFF; border: none; border-radius: 25px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); transition: background-color 0.3s;" onclick="alert('김나영 버튼 클릭')">김나영</button>
 
 
 ## 🔨사용한 기술 스택
