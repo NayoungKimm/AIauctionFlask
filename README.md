@@ -27,6 +27,7 @@ https://youtu.be/2TEAM8fRNM0
 
 | 기능 | 설명 |
 |---|---|
+| 카카오로그인 | 소셜로그인을 통해 회원 관리가 가능함. |
 | 빌라 검색 | 본인이 원하는 빌라를 법원, 주소, 평형, 가격, 유찰수, 특수권리, 나의 물건에 따라서 검색 가능함. |
 | 예상 낙찰가 조회 | 지난 경매 데이터로 학습된 선형회귀모델로 도출된 각 빌라의 예상 낙찰가 조회 가능함. |
 | 모의입찰가 입력 | 예측분석에 필요한 파이썬 라이브러리를 사용하여 모의입찰가를 입력할 수 있음. |
@@ -34,15 +35,20 @@ https://youtu.be/2TEAM8fRNM0
 | 관심있는 물건 한눈에 보기 | 빌라 매물을 구경하다 마음에 드는 매물에 저장을 누르면 나의 물건 목록에서 한번에 조회 가능함. |
 
 
+
 ## 👩🏻‍💻개발기간 및 팀원소개
 
 23.04.01~23.08.31
 
-이다은
-김나영
+| 이름 | 버튼 |
+|------|------|
+| 이다은 | <button style="padding: 10px 20px; font-size: 16px; text-align: center; text-decoration: none; cursor: pointer; outline: none; color: #fff; background-color: #007BFF; border: none; border-radius: 5px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); transition: background-color 0.3s;" onclick="alert('이다은 버튼 클릭')">클릭</button> |
+| 김나영 | <button style="padding: 10px 20px; font-size: 16px; text-align: center; text-decoration: none; cursor: pointer; outline: none; color: #fff; background-color: #007BFF; border: none; border-radius: 5px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); transition: background-color 0.3s;" onclick="alert('김나영 버튼 클릭')">클릭</button> |
 
 
 ## 🔨사용한 기술 스택
+
+
 
 
 ## ✌🏻개인역할 및 트러블슈팅과정
