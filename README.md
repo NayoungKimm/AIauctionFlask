@@ -37,25 +37,13 @@ https://youtu.be/2TEAM8fRNM0
 
 
 
-## 👩🏻‍💻개발기간 및 팀원소개
+## 👩🏻‍💻개발기간
 
 23.04.01~23.08.31
 
-### 이다은
-<button style="padding: 10px 20px; font-size: 16px; text-align: center; text-decoration: none; cursor: pointer; outline: none; color: #fff; background-color: #007BFF; border: none; border-radius: 25px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); transition: background-color 0.3s;" onclick="alert('이다은 버튼 클릭')">이다은</button>
-
-### 김나영
-<button style="padding: 10px 20px; font-size: 16px; text-align: center; text-decoration: none; cursor: pointer; outline: none; color: #fff; background-color: #007BFF; border: none; border-radius: 25px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); transition: background-color 0.3s;" onclick="alert('김나영 버튼 클릭')">김나영</button>
-
-
 ## 🔨사용한 기술 스택
 
-
-
-
-## ✌🏻트러블슈팅과정
-
-
-## 📝후기
-
-
+| 기술스택 | 구현 상세 |
+|---|---|
+| html, js, css | 프론트 UI |
+| python Flask | 카카오로그인, 스피드옥션 웹페이지 크롤링, 선형회귀 모델 기능을 포함한 서버구축 |
